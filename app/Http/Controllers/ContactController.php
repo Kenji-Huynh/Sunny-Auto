@@ -58,10 +58,18 @@ class ContactController extends Controller
 
         $contacts = $query->orderBy('created_at', 'desc')->paginate(15);
 
+        // Lấy danh sách khu vực duy nhất từ database
+        $locations = Contact::query()
+            ->whereNotNull('location')
+            ->where('location', '!=', '')
+            ->distinct()
+            ->orderBy('location')
+            ->pluck('location');
+
         $unreadCount = Contact::unread()->count();
         $newCount = Contact::new()->count();
 
-        return view('contacts.index', compact('contacts', 'unreadCount', 'newCount'));
+        return view('contacts.index', compact('contacts', 'unreadCount', 'newCount', 'locations'));
     }
 
     /**

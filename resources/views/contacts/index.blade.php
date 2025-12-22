@@ -669,6 +669,16 @@
                 </div>
                 
                 <div class="filter-group">
+                    <label class="filter-label">Khu vực (Tỉnh/Thành phố)</label>
+                    <select name="location" class="filter-input">
+                        <option value="">-- Tất cả khu vực --</option>
+                        @foreach($locations as $loc)
+                            <option value="{{ $loc }}" {{ request('location') == $loc ? 'selected' : '' }}>{{ $loc }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                
+                <div class="filter-group">
                     <label class="filter-label">Trạng thái</label>
                     <select name="status" class="filter-input">
                         <option value="">Tất cả</option>
