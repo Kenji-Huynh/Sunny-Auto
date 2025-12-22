@@ -19,6 +19,8 @@ function Contact() {
         company: '',
         email: '',
         phone: '',
+        subject: '',         // Thêm subject
+        message: '',         // Thêm message
         location: '',
         inquiry_types: [],
         ev_products: [],
@@ -114,6 +116,8 @@ function Contact() {
                 company: '',
                 email: '',
                 phone: '',
+                subject: '',
+                message: '',
                 location: '',
                 inquiry_types: [],
                 ev_products: [],
@@ -426,10 +430,47 @@ function Contact() {
                             </div>
                         </section>
 
-                        {/* 2. Inquiry Type */}
+                        {/* 2. Subject & Message */}
                         <section style={{ marginBottom: '32px' }}>
                             <h2 style={{ fontSize: '20px', fontWeight: '700', marginBottom: '20px', color: '#1e293b' }}>
-                                2. Loại yêu cầu <span style={{ color: '#dc2626' }}>*</span>
+                                2. Chủ đề & Tin nhắn
+                            </h2>
+                            
+                            <div style={{ marginBottom: '16px' }}>
+                                <label style={labelStyle}>Chủ đề liên hệ</label>
+                                <input
+                                    type="text"
+                                    name="subject"
+                                    value={formData.subject}
+                                    onChange={handleChange}
+                                    style={inputStyle}
+                                    placeholder="VD: Hỏi giá xe điện BYD, Tư vấn trạm sạc cho công ty..."
+                                />
+                                <p style={{ fontSize: '12px', color: '#64748b', marginTop: '4px' }}>
+                                    Tóm tắt ngắn gọn nội dung bạn muốn trao đổi
+                                </p>
+                            </div>
+
+                            <div>
+                                <label style={labelStyle}>Nội dung tin nhắn</label>
+                                <textarea
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    rows="4"
+                                    style={inputStyle}
+                                    placeholder="Mô tả chi tiết về nhu cầu, câu hỏi của bạn..."
+                                />
+                                <p style={{ fontSize: '12px', color: '#64748b', marginTop: '4px' }}>
+                                    Chia sẻ thêm thông tin để chúng tôi hỗ trợ bạn tốt hơn
+                                </p>
+                            </div>
+                        </section>
+
+                        {/* 3. Inquiry Type */}
+                        <section style={{ marginBottom: '32px' }}>
+                            <h2 style={{ fontSize: '20px', fontWeight: '700', marginBottom: '20px', color: '#1e293b' }}>
+                                3. Loại yêu cầu <span style={{ color: '#dc2626' }}>*</span>
                             </h2>
                             <div style={{ display: 'grid', gap: '12px' }}>
                                 {['Xe điện thương mại / xe tải điện', 'Giải pháp sạc', 'Báo giá', 'Hỗ trợ kỹ thuật / giải pháp vận hành'].map(option => (

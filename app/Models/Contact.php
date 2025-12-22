@@ -11,6 +11,8 @@ class Contact extends Model
         'company',
         'email',
         'phone',
+        'subject',        // Thêm lại subject
+        'message',        // Thêm lại message
         'location',
         'inquiry_types',
         'ev_products',
