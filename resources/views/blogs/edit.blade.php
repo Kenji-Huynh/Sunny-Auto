@@ -127,7 +127,7 @@
         font-size: 12px;
         font-weight: 600;
         color: white;
-        background: #10b981;
+        background: #f97316;
     }
 
     .image-item .delete-btn {
@@ -387,7 +387,7 @@
                 const deleteBtn = imageItem.querySelector('.delete-btn');
                 if (deleteBtn) {
                     deleteBtn.innerHTML = '✓';
-                    deleteBtn.style.background = '#10b981';
+                    deleteBtn.style.background = '#f97316';
                     deleteBtn.onclick = function() { undoDeletion(); };
                     deleteBtn.style.opacity = '1';
                 }
@@ -420,7 +420,7 @@
             const label = imageItem.querySelector('.image-item-label');
             if (label) {
                 label.textContent = 'Ảnh hiện tại';
-                label.style.background = '#10b981';
+                label.style.background = '#f97316';
             }
         }
     }

@@ -267,7 +267,7 @@
     .alert-success {
         background-color: #d1fae5;
         color: #065f46;
-        border-left: 4px solid #10b981;
+        border-left: 4px solid #f97316;
     }
 
     @keyframes slideDown {

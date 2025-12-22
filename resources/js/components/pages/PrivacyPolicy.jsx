@@ -198,7 +198,7 @@ function PrivacyPolicy() {
                         </div>
 
                         {/* Contact Information */}
-                        <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 border-l-4 border-green-500">
+                        <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8 border-l-4 border-orange-500">
                             <h2 className="text-3xl font-bold text-gray-900 mb-4">Contact Us</h2>
                             <p className="text-gray-700 leading-relaxed mb-4">
                                 If you have any questions or concerns about this Privacy Policy or our data practices, please contact us:

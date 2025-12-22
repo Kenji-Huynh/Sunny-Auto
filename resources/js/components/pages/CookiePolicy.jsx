@@ -40,9 +40,9 @@ function CookiePolicy() {
                             <h2 className="text-3xl font-bold text-gray-900 mb-4">Types of Cookies We Use</h2>
                             
                             {/* Strictly Necessary Cookies */}
-                            <div className="bg-gray-50 rounded-xl p-6 mb-6 border-l-4 border-green-500">
+                            <div className="bg-gray-50 rounded-xl p-6 mb-6 border-l-4 border-orange-500">
                                 <h3 className="text-xl font-bold text-gray-900 mb-3 flex items-center">
-                                    <svg className="w-6 h-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-6 h-6 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
                                     Strictly Necessary Cookies
@@ -213,14 +213,14 @@ function CookiePolicy() {
                                 For more information about cookies and how to manage them, you can visit:
                             </p>
                             <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                                <li><a href="https://www.allaboutcookies.org" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">www.allaboutcookies.org</a></li>
-                                <li><a href="https://www.youronlinechoices.eu" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">www.youronlinechoices.eu</a></li>
-                                <li><a href="https://www.networkadvertising.org" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:underline">www.networkadvertising.org</a></li>
+                                <li><a href="https://www.allaboutcookies.org" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:underline">www.allaboutcookies.org</a></li>
+                                <li><a href="https://www.youronlinechoices.eu" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:underline">www.youronlinechoices.eu</a></li>
+                                <li><a href="https://www.networkadvertising.org" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:underline">www.networkadvertising.org</a></li>
                             </ul>
                         </div>
 
                         {/* Contact Information */}
-                        <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 border-l-4 border-green-500">
+                        <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8 border-l-4 border-orange-500">
                             <h2 className="text-3xl font-bold text-gray-900 mb-4">Contact Us</h2>
                             <p className="text-gray-700 leading-relaxed mb-4">
                                 If you have any questions about our use of cookies or this Cookie Policy, please contact us:

@@ -551,7 +551,7 @@ function previewImages(event) {
             
             const label = document.createElement('div');
             label.textContent = i === 0 ? 'Ảnh chính' : `Ảnh ${i + 1}`;
-            label.style.cssText = 'padding: 8px; text-align: center; font-size: 12px; font-weight: 600; color: #374151; background: ' + (i === 0 ? '#10b981' : '#e5e7eb') + '; color: ' + (i === 0 ? 'white' : '#374151');
+            label.style.cssText = 'padding: 8px; text-align: center; font-size: 12px; font-weight: 600; color: #374151; background: ' + (i === 0 ? '#f97316' : '#e5e7eb') + '; color: ' + (i === 0 ? 'white' : '#374151');
             
             previewDiv.appendChild(img);
             previewDiv.appendChild(label);

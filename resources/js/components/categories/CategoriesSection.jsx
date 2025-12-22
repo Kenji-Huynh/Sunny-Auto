@@ -45,7 +45,7 @@ const CategoriesSection = () => {
             <div className="container mx-auto px-4">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h3 className="text-sm font-semibold text-emerald-600 uppercase tracking-wider mb-3">
+                    <h3 className="text-sm font-semibold text-orange-600 uppercase tracking-wider mb-3">
                         EXPLORE OUR FLEET
                     </h3>
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -96,7 +96,7 @@ const CategoriesSection = () => {
                                     </span>
                                     
                                     {/* Arrow Icon */}
-                                    <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-emerald-500 transition-colors duration-300">
+                                    <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-orange-500 transition-colors duration-300">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"

@@ -99,7 +99,7 @@
 
     .stat-icon.green {
         background: rgba(16, 185, 129, 0.1);
-        color: #10b981;
+        color: #f97316;
     }
 
     .stat-icon.purple {

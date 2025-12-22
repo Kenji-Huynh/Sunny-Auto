@@ -258,7 +258,7 @@
     }
 
     .image-item-label.primary {
-        background: #10b981;
+        background: #f97316;
         color: white;
     }
 
@@ -676,7 +676,7 @@ function markForDeletion(mediaId) {
         imageItem.style.opacity = '0.4';
         imageItem.style.filter = 'grayscale(100%)';
         imageItem.querySelector('.delete-btn').innerHTML = '✓';
-        imageItem.querySelector('.delete-btn').style.background = '#10b981';
+        imageItem.querySelector('.delete-btn').style.background = '#f97316';
         imageItem.querySelector('.delete-btn').onclick = function() { undoDeletion(mediaId); };
         
         // Add to deletion list

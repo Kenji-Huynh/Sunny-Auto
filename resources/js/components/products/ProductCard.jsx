@@ -78,7 +78,7 @@ function ProductCard({ product, isLarge = false }) {
                             <div className="w-full max-w-md">
                                 {/* Price Badge */}
                                 <div className="mb-3 text-center">
-                                    <div className="inline-block bg-emerald-500 text-white px-4 py-1.5 rounded-lg font-bold text-sm shadow-lg">
+                                    <div className="inline-block bg-orange-500 text-white px-4 py-1.5 rounded-lg font-bold text-sm shadow-lg">
                                         {product.formatted_price}
                                     </div>
                                 </div>
@@ -87,7 +87,7 @@ function ProductCard({ product, isLarge = false }) {
                                 <div className="grid grid-cols-2 gap-2.5 text-white">
                                     {/* Range */}
                                     {evcSpec.range_km && (
-                                        <div className="bg-gray-800/90 backdrop-blur-sm rounded-lg p-2.5 border border-emerald-500/30">
+                                        <div className="bg-gray-800/90 backdrop-blur-sm rounded-lg p-2.5 border border-orange-500/30">
                                             <p className="text-emerald-400 font-bold mb-0.5 text-xs">Range</p>
                                             <p className="text-white font-medium text-sm">{evcSpec.range_km}</p>
                                             {evcSpec.range_test_standard && (
@@ -98,7 +98,7 @@ function ProductCard({ product, isLarge = false }) {
 
                                     {/* Charge */}
                                     {evcSpec.charge_description && (
-                                        <div className="bg-gray-800/90 backdrop-blur-sm rounded-lg p-2.5 border border-emerald-500/30">
+                                        <div className="bg-gray-800/90 backdrop-blur-sm rounded-lg p-2.5 border border-orange-500/30">
                                             <p className="text-emerald-400 font-bold mb-0.5 text-xs">Charge</p>
                                             <p className="text-white text-xs leading-relaxed">{evcSpec.charge_description}</p>
                                         </div>
@@ -106,7 +106,7 @@ function ProductCard({ product, isLarge = false }) {
 
                                     {/* 0-100 km/h */}
                                     {evcSpec.zero_to_100_kmh && (
-                                        <div className="bg-gray-800/90 backdrop-blur-sm rounded-lg p-2.5 border border-emerald-500/30">
+                                        <div className="bg-gray-800/90 backdrop-blur-sm rounded-lg p-2.5 border border-orange-500/30">
                                             <p className="text-emerald-400 font-bold mb-0.5 text-xs">0-100 km/h</p>
                                             <p className="text-white font-medium text-sm">{evcSpec.zero_to_100_kmh}</p>
                                         </div>
@@ -114,7 +114,7 @@ function ProductCard({ product, isLarge = false }) {
 
                                     {/* Power */}
                                     {(evcSpec.power_kw || evcSpec.torque_nm) && (
-                                        <div className="bg-gray-800/90 backdrop-blur-sm rounded-lg p-2.5 border border-emerald-500/30">
+                                        <div className="bg-gray-800/90 backdrop-blur-sm rounded-lg p-2.5 border border-orange-500/30">
                                             <p className="text-emerald-400 font-bold mb-0.5 text-xs">Power</p>
                                             <p className="text-white font-medium text-sm">
                                                 {evcSpec.power_kw}
@@ -127,7 +127,7 @@ function ProductCard({ product, isLarge = false }) {
 
                                     {/* Drivetrain */}
                                     {evcSpec.drivetrain && (
-                                        <div className="bg-gray-800/90 backdrop-blur-sm rounded-lg p-2.5 border border-emerald-500/30">
+                                        <div className="bg-gray-800/90 backdrop-blur-sm rounded-lg p-2.5 border border-orange-500/30">
                                             <p className="text-emerald-400 font-bold mb-0.5 text-xs">Drivetrain</p>
                                             <p className="text-white text-xs">{evcSpec.drivetrain}</p>
                                         </div>
@@ -135,7 +135,7 @@ function ProductCard({ product, isLarge = false }) {
 
                                     {/* Battery */}
                                     {(evcSpec.battery_capacity_kwh || evcSpec.battery_type) && (
-                                        <div className="bg-gray-800/90 backdrop-blur-sm rounded-lg p-2.5 border border-emerald-500/30">
+                                        <div className="bg-gray-800/90 backdrop-blur-sm rounded-lg p-2.5 border border-orange-500/30">
                                             <p className="text-emerald-400 font-bold mb-0.5 text-xs">Battery</p>
                                             <p className="text-white text-xs leading-relaxed">
                                                 {evcSpec.battery_capacity_kwh}
@@ -148,7 +148,7 @@ function ProductCard({ product, isLarge = false }) {
                                 {/* Brand Badge at bottom of overlay */}
                                 {brand.name && (
                                     <div className="mt-3 text-center">
-                                        <div className="inline-block bg-gray-900/90 backdrop-blur-sm px-4 py-1.5 rounded-lg border border-emerald-500/50">
+                                        <div className="inline-block bg-gray-900/90 backdrop-blur-sm px-4 py-1.5 rounded-lg border border-orange-500/50">
                                             <p className="text-gray-400 text-xs mb-0.5">Brand</p>
                                             <p className="text-white font-black text-base tracking-wider">{brand.name.toUpperCase()}</p>
                                         </div>

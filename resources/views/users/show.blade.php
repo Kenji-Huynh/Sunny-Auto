@@ -234,7 +234,7 @@
     }
 
     .btn-edit {
-        background: linear-gradient(135deg, #10b981, #059669);
+        background: linear-gradient(135deg, #f97316, #059669);
         color: white;
         box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
     }

@@ -31,9 +31,9 @@ function About() {
                 <div className="container mx-auto px-4">
                     <div className="max-w-5xl mx-auto">
                         {/* Main Content Box */}
-                        <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 border-l-4 border-green-500">
+                        <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 border-l-4 border-orange-500">
                             <div className="flex items-start gap-6 mb-8">
-                                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg">
+                                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg">
                                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                                     </svg>
@@ -42,7 +42,7 @@ function About() {
                                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
                                         Driving the Future
                                     </h2>
-                                    <div className="w-20 h-1 bg-gradient-to-r from-green-500 to-green-300"></div>
+                                    <div className="w-20 h-1 bg-gradient-to-r from-orange-500 to-orange-300"></div>
                                 </div>
                             </div>
 
@@ -50,7 +50,7 @@ function About() {
                                 <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
                                     As a <span className="font-semibold text-gray-900">prominent member of the Leong Lee Group</span>, 
                                     SUNNY AUTO is driven by a steadfast commitment to <span className="text-orange-600 font-medium">innovation</span>, 
-                                    <span className="text-green-600 font-medium"> sustainability</span>, and 
+                                    <span className="text-orange-600 font-medium"> sustainability</span>, and 
                                     <span className="text-blue-600 font-medium"> unparalleled service excellence</span>.
                                 </p>
                                 
@@ -59,26 +59,26 @@ function About() {
                                     where we harness cutting-edge technology to deliver next-generation solutions.
                                 </p>
 
-                                <div className="bg-gradient-to-r from-green-50 to-green-100/50 rounded-xl p-6 border-l-4 border-green-400">
+                                <div className="bg-gradient-to-r from-orange-50 to-orange-100/50 rounded-xl p-6 border-l-4 border-orange-400">
                                     <p className="text-lg md:text-xl text-gray-800 leading-relaxed">
                                         With an unwavering dedication to advancing the EV segment, we proudly offer a 
                                         <span className="font-semibold text-gray-900"> comprehensive range of EV products</span>, including:
                                     </p>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                                         <div className="flex items-center gap-3">
-                                            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                                            <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
                                             <span className="text-gray-800 font-medium">Electric Trucks</span>
                                         </div>
                                         <div className="flex items-center gap-3">
-                                            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                                            <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
                                             <span className="text-gray-800 font-medium">Electric Forklifts</span>
                                         </div>
                                         <div className="flex items-center gap-3">
-                                            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                                            <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
                                             <span className="text-gray-800 font-medium">Charging Station Systems</span>
                                         </div>
                                         <div className="flex items-center gap-3">
-                                            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                                            <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
                                             <span className="text-gray-800 font-medium">Battery Solutions</span>
                                         </div>
                                     </div>
@@ -94,9 +94,9 @@ function About() {
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                         {/* Our Vision */}
-                        <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 shadow-md hover:shadow-xl transition-all">
+                        <div className="bg-gradient-to-br from-orange-50 to-orange-50 rounded-2xl p-8 shadow-md hover:shadow-xl transition-all">
                             <div className="flex items-center gap-4 mb-6">
-                                <div className="w-14 h-14 bg-green-600 rounded-xl flex items-center justify-center shadow-lg">
+                                <div className="w-14 h-14 bg-orange-600 rounded-xl flex items-center justify-center shadow-lg">
                                     <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -143,8 +143,8 @@ function About() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
                         {/* Electric Trucks */}
                         <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all border border-gray-100">
-                            <div className="w-16 h-16 bg-green-50 rounded-xl flex items-center justify-center mb-4">
-                                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="w-16 h-16 bg-orange-50 rounded-xl flex items-center justify-center mb-4">
+                                <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" />
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
                                 </svg>
@@ -157,8 +157,8 @@ function About() {
 
                         {/* Electric Forklifts */}
                         <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all border border-gray-100">
-                            <div className="w-16 h-16 bg-green-50 rounded-xl flex items-center justify-center mb-4">
-                                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="w-16 h-16 bg-orange-50 rounded-xl flex items-center justify-center mb-4">
+                                <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                                 </svg>
                             </div>
@@ -170,8 +170,8 @@ function About() {
 
                         {/* Charging Stations */}
                         <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all border border-gray-100">
-                            <div className="w-16 h-16 bg-green-50 rounded-xl flex items-center justify-center mb-4">
-                                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="w-16 h-16 bg-orange-50 rounded-xl flex items-center justify-center mb-4">
+                                <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                                 </svg>
                             </div>
@@ -183,8 +183,8 @@ function About() {
 
                         {/* Battery Solutions */}
                         <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all border border-gray-100">
-                            <div className="w-16 h-16 bg-green-50 rounded-xl flex items-center justify-center mb-4">
-                                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="w-16 h-16 bg-orange-50 rounded-xl flex items-center justify-center mb-4">
+                                <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
                                 </svg>
                             </div>
@@ -206,8 +206,8 @@ function About() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                         {/* Innovation */}
                         <div className="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-shadow">
-                            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                                <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                                <svg className="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                                 </svg>
                             </div>
@@ -219,8 +219,8 @@ function About() {
 
                         {/* Sustainability */}
                         <div className="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-shadow">
-                            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                                <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                                <svg className="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                             </div>
@@ -232,8 +232,8 @@ function About() {
 
                         {/* Excellence */}
                         <div className="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-shadow">
-                            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto">
-                                <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                                <svg className="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                                 </svg>
                             </div>
@@ -264,10 +264,10 @@ function About() {
                         </div>
 
                         {/* Smart Manufacturing Card */}
-                        <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 border-t-4 border-green-500">
+                        <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 border-t-4 border-orange-500">
                             <div className="flex items-start gap-6 mb-6">
-                                <div className="flex-shrink-0 w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center">
-                                    <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div className="flex-shrink-0 w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center">
+                                    <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                                     </svg>
                                 </div>
@@ -275,7 +275,7 @@ function About() {
                                     <h3 className="text-3xl font-bold text-gray-900 mb-2">
                                         Smart Manufacturing
                                     </h3>
-                                    <div className="w-20 h-1 bg-gradient-to-r from-green-500 to-green-300"></div>
+                                    <div className="w-20 h-1 bg-gradient-to-r from-orange-500 to-orange-300"></div>
                                 </div>
                             </div>
 
@@ -296,13 +296,13 @@ function About() {
             </section>
 
             {/* ESG Commitment Section */}
-            <section className="py-20 bg-gradient-to-b from-green-50 to-white">
+            <section className="py-20 bg-gradient-to-b from-orange-50 to-white">
                 <div className="container mx-auto px-4">
                     <div className="max-w-6xl mx-auto">
                         {/* Section Header with Icon */}
                         <div className="text-center mb-12">
-                            <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <svg className="w-10 h-10 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                                 </svg>
                             </div>
@@ -320,8 +320,8 @@ function About() {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                             {/* Zero-emission vehicle production */}
                             <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all">
-                                <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                                    <svg className="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div className="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center mb-4">
+                                    <svg className="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
                                 </div>
@@ -332,8 +332,8 @@ function About() {
 
                             {/* Carbon-neutral operations */}
                             <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all">
-                                <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                                    <svg className="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div className="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center mb-4">
+                                    <svg className="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
                                 </div>
@@ -344,8 +344,8 @@ function About() {
 
                             {/* Sustainable supply chain */}
                             <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all">
-                                <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                                    <svg className="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div className="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center mb-4">
+                                    <svg className="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
                                 </div>
@@ -356,8 +356,8 @@ function About() {
 
                             {/* Community engagement programs */}
                             <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all">
-                                <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                                    <svg className="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div className="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center mb-4">
+                                    <svg className="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
                                 </div>
@@ -407,7 +407,7 @@ function About() {
                                 <div className="relative">
                                     {/* Connector Line - Hidden on mobile, shown on md+ */}
                                     <div className="hidden md:block absolute top-10 left-1/2 w-full h-0.5 bg-green-200 -z-10"></div>
-                                    <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg relative z-10">
+                                    <div className="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg relative z-10">
                                         <span className="text-2xl font-bold text-white">2020</span>
                                     </div>
                                 </div>
@@ -421,7 +421,7 @@ function About() {
                             <div className="text-center">
                                 <div className="relative">
                                     <div className="hidden md:block absolute top-10 left-1/2 w-full h-0.5 bg-green-200 -z-10"></div>
-                                    <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg relative z-10">
+                                    <div className="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg relative z-10">
                                         <span className="text-2xl font-bold text-white">2021</span>
                                     </div>
                                 </div>
@@ -435,7 +435,7 @@ function About() {
                             <div className="text-center">
                                 <div className="relative">
                                     <div className="hidden md:block absolute top-10 left-1/2 w-full h-0.5 bg-green-200 -z-10"></div>
-                                    <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg relative z-10">
+                                    <div className="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg relative z-10">
                                         <span className="text-2xl font-bold text-white">2022</span>
                                     </div>
                                 </div>
@@ -449,7 +449,7 @@ function About() {
                             <div className="text-center">
                                 <div className="relative">
                                     <div className="hidden md:block absolute top-10 left-1/2 w-full h-0.5 bg-green-200 -z-10"></div>
-                                    <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg relative z-10">
+                                    <div className="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg relative z-10">
                                         <span className="text-2xl font-bold text-white">2023</span>
                                     </div>
                                 </div>
@@ -462,7 +462,7 @@ function About() {
                             {/* 2024 */}
                             <div className="text-center">
                                 <div className="relative">
-                                    <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg relative z-10">
+                                    <div className="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg relative z-10">
                                         <span className="text-2xl font-bold text-white">2024</span>
                                     </div>
                                 </div>
@@ -492,7 +492,7 @@ function About() {
                         {/* Dr. Phuoc - Chairman & CEO */}
                         <div className="text-center">
                             <div className="relative mb-6">
-                                <div className="w-40 h-40 mx-auto rounded-full overflow-hidden bg-green-100 shadow-lg">
+                                <div className="w-40 h-40 mx-auto rounded-full overflow-hidden bg-orange-100 shadow-lg">
                                     <img 
                                         src="/imgs/people/3.jpg" 
                                         alt="Dr. Phuoc" 
@@ -501,7 +501,7 @@ function About() {
                                 </div>
                             </div>
                             <h3 className="text-2xl font-bold text-gray-900 mb-2">Dr. Phuoc</h3>
-                            <p className="text-green-600 font-semibold mb-4">Chairman & CEO</p>
+                            <p className="text-orange-600 font-semibold mb-4">Chairman & CEO</p>
                             <p className="text-gray-600 leading-relaxed">
                                 Responsible for the overall strategic planning, organizational development, and management operations.
                             </p>
@@ -510,7 +510,7 @@ function About() {
                         {/* Tran Minh Duc - President */}
                         <div className="text-center">
                             <div className="relative mb-6">
-                                <div className="w-40 h-40 mx-auto rounded-full overflow-hidden bg-green-100 shadow-lg">
+                                <div className="w-40 h-40 mx-auto rounded-full overflow-hidden bg-orange-100 shadow-lg">
                                     <img 
                                         src="/imgs/people/2.jpg" 
                                         alt="Tran Minh Duc" 
@@ -519,7 +519,7 @@ function About() {
                                 </div>
                             </div>
                             <h3 className="text-2xl font-bold text-gray-900 mb-2">Tran Minh Duc</h3>
-                            <p className="text-green-600 font-semibold mb-4">President</p>
+                            <p className="text-orange-600 font-semibold mb-4">President</p>
                             <p className="text-gray-600 leading-relaxed">
                                 Responsible for the company's product planning, product portfolio management and sales operations.
                             </p>
@@ -528,7 +528,7 @@ function About() {
                         {/* Le Thi Mai - Vice President */}
                         <div className="text-center">
                             <div className="relative mb-6">
-                                <div className="w-40 h-40 mx-auto rounded-full overflow-hidden bg-green-100 shadow-lg">
+                                <div className="w-40 h-40 mx-auto rounded-full overflow-hidden bg-orange-100 shadow-lg">
                                     <img 
                                         src="/imgs/people/1.jpg" 
                                         alt="Le Thi Mai" 
@@ -537,7 +537,7 @@ function About() {
                                 </div>
                             </div>
                             <h3 className="text-2xl font-bold text-gray-900 mb-2">Le Thi Mai</h3>
-                            <p className="text-green-600 font-semibold mb-4">Vice President</p>
+                            <p className="text-orange-600 font-semibold mb-4">Vice President</p>
                             <p className="text-gray-600 leading-relaxed">
                                 Responsible for the company's strategy, finance, fundraising, investments, and globalization efforts.
                             </p>
@@ -547,7 +547,7 @@ function About() {
             </section>
 
             {/* CTA Section */}
-            <section className="py-20 bg-gradient-to-r from-green-500 to-green-600">
+            <section className="py-20 bg-gradient-to-r from-orange-500 to-orange-600">
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                         Ready to Transform Your Fleet?
@@ -558,13 +558,13 @@ function About() {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <a 
                             href="/shop" 
-                            className="bg-white text-green-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors"
+                            className="bg-white text-orange-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors"
                         >
                             View Products
                         </a>
                         <a 
                             href="/contact" 
-                            className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-green-600 transition-colors"
+                            className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-orange-600 transition-colors"
                         >
                             Contact Us
                         </a>

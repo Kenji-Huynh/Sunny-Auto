@@ -393,7 +393,7 @@ const ProductCard = ({ product, viewMode, index }) => {
                     <p className="text-gray-500 text-sm line-clamp-2 mb-3">{product.short_description}</p>
                     <div className="flex items-center justify-between">
                         <span className="text-lg font-bold text-orange-500">{product.formatted_price}</span>
-                        <span className="text-emerald-500 text-sm flex items-center gap-1">
+                        <span className="text-orange-500 text-sm flex items-center gap-1">
                             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                             </svg>

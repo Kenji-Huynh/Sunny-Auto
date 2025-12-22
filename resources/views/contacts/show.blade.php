@@ -29,7 +29,7 @@
     .btn { padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; border: none; cursor: pointer; transition: all 0.2s; }
     .btn-primary { background: #2563eb; color: #fff; }
     .btn-primary:hover { background: #1d4ed8; }
-    .btn-success { background: #16a34a; color: #fff; }
+    .btn-success { background: #ea580c; color: #fff; }
     .btn-success:hover { background: #15803d; }
     .btn-danger { background: #fff; color: #dc2626; border: 1px solid #fecaca; }
     .btn-danger:hover { background: #fef2f2; }

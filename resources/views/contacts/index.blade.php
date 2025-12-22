@@ -90,8 +90,8 @@
     }
     
     .stats-card.green {
-        --card-color-start: #10b981;
-        --card-color-end: #047857;
+        --card-color-start: #f97316;
+        --card-color-end: #c2410c;
     }
     
     .stats-content {
@@ -174,7 +174,7 @@
     }
 
     .btn-export {
-        background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+        background: linear-gradient(135deg, #f97316 0%, #c2410c 100%);
         color: white;
         padding: 12px 24px;
         border-radius: 12px;
@@ -389,7 +389,7 @@
     }
     
     .status-resolved {
-        background: linear-gradient(135deg, #10b981, #047857);
+        background: linear-gradient(135deg, #f97316, #c2410c);
         color: white;
     }
     
@@ -414,7 +414,7 @@
     }
 
     .customer-phone {
-        color: #10b981;
+        color: #f97316;
         font-size: 12px;
         margin: 0;
         font-weight: 500;
@@ -766,7 +766,7 @@
                                 </td>
                                 <td style="text-align: center;">
                                     @if($contact->read_at)
-                                        <span style="color: #10b981; font-size: 12px; font-weight: 600;">✅ Đã đọc</span>
+                                        <span style="color: #f97316; font-size: 12px; font-weight: 600;">✅ Đã đọc</span>
                                         <p style="color: #64748b; font-size: 10px; margin: 4px 0 0 0;">{{ $contact->read_at->format('d/m H:i') }}</p>
                                     @else
                                         <span style="color: #f59e0b; font-size: 12px; font-weight: 600;">❌ Chưa đọc</span>

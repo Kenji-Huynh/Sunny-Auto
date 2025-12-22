@@ -49,7 +49,7 @@ function ServicesSection() {
     ];
 
     return (
-        <section className="py-20 bg-gradient-to-b from-white via-emerald-50/30 to-white">
+        <section className="py-20 bg-gradient-to-b from-white via-orange-50/30 to-white">
             <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-16">
@@ -60,9 +60,9 @@ function ServicesSection() {
                         Services We Offer
                     </h2>
                     <div className="flex items-center justify-center gap-2 mb-6">
-                        <div className="h-1 w-12 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded"></div>
-                        <div className="h-1 w-12 bg-gradient-to-r from-emerald-400 to-emerald-500 rounded"></div>
-                        <div className="h-1 w-12 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded"></div>
+                        <div className="h-1 w-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded"></div>
+                        <div className="h-1 w-12 bg-gradient-to-r from-emerald-400 to-orange-500 rounded"></div>
+                        <div className="h-1 w-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded"></div>
                     </div>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                         Cutting-edge technology powering the future of electric commercial vehicles
@@ -87,19 +87,19 @@ function ServicesSection() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/40 to-transparent"></div>
                                 
                                 {/* Icon Badge */}
-                                <div className="absolute top-6 left-6 w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-emerald-600 shadow-xl group-hover:scale-110 transition-transform duration-300">
+                                <div className="absolute top-6 left-6 w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-orange-600 shadow-xl group-hover:scale-110 transition-transform duration-300">
                                     {service.icon}
                                 </div>
 
                                 {/* Number Badge */}
-                                <div className="absolute top-6 right-6 w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-xl">
+                                <div className="absolute top-6 right-6 w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-xl">
                                     {String(index + 1).padStart(2, '0')}
                                 </div>
                             </div>
 
                             {/* Content */}
                             <div className="p-8">
-                                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-emerald-600 transition-colors">
+                                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-orange-600 transition-colors">
                                     {service.title}
                                 </h3>
                                 <p className="text-gray-600 leading-relaxed mb-6">
@@ -107,7 +107,7 @@ function ServicesSection() {
                                 </p>
                                 
                                 {/* Learn More Button */}
-                                <button className="inline-flex items-center gap-2 text-emerald-600 font-semibold group-hover:gap-4 transition-all duration-300">
+                                <button className="inline-flex items-center gap-2 text-orange-600 font-semibold group-hover:gap-4 transition-all duration-300">
                                     <span>Learn More</span>
                                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
