@@ -94,19 +94,19 @@ function Header() {
                     : 'bg-transparent border-white/20')
                 : 'bg-white shadow-sm border-gray-200'
         }`}>
-            <div className="container mx-auto px-6 py-4">
-                <div className="flex items-center justify-between">
+            <div className="w-full px-4 lg:px-6 py-4">
+                <div className="max-w-6xl xl:max-w-7xl mx-auto flex items-center justify-between gap-3 lg:gap-6">
                     {/* Logo bên trái */}
-                    <Link to="/" className="flex items-center">
+                    <Link to="/" className="flex items-center flex-shrink-0">
                         <img 
                             src="/imgs/logo/logo.png" 
                             alt="Sunny Auto" 
-                            className="h-16 w-auto"
+                            className="h-10 lg:h-12 w-auto"
                         />
                     </Link>
 
                     {/* Menu ở giữa */}
-                    <nav className="hidden md:flex items-center space-x-8">
+                    <nav className="hidden md:flex items-center space-x-4 lg:space-x-8 flex-1 justify-center">
                         <Link 
                             to="/about"
                             className={`font-medium hover:text-[#ff4500] transition-colors duration-300 ${
@@ -134,7 +134,7 @@ function Header() {
                     </nav>
 
                     {/* Search + Icons bên phải */}
-                    <div className="flex items-center space-x-4">
+                    <div className="flex items-center space-x-2 lg:space-x-4 flex-shrink-0">
                         {/* Search Box - Compact style like reference */}
                         <div className="relative" ref={searchRef}>
                             {isSearchOpen ? (
@@ -167,7 +167,7 @@ function Header() {
                                             value={searchQuery}
                                             onChange={(e) => setSearchQuery(e.target.value)}
                                             placeholder="Tìm kiếm..."
-                                            className={`w-48 px-3 py-2 bg-transparent outline-none text-sm ${
+                                            className={`w-36 lg:w-48 px-3 py-2 bg-transparent outline-none text-sm ${
                                                 isScrolled 
                                                     ? 'text-gray-800 placeholder-gray-500' 
                                                     : 'text-white placeholder-gray-400'
