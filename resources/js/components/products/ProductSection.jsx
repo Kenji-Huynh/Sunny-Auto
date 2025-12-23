@@ -152,30 +152,30 @@ function ProductSection() {
                         )}
                         
                         {/* Mobile arrows - positioned below card */}
-                        <div className="md:hidden mt-6 flex items-center justify-center gap-6">
+                        <div className="md:hidden mt-8 flex items-center justify-center gap-4 px-4">
                             <button
                                 aria-label="Previous"
                                 onClick={handlePrev}
-                                className="group rounded-full p-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white shadow-lg hover:shadow-xl transition-all hover:scale-110 active:scale-95"
+                                className="group flex-shrink-0 rounded-full p-3.5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white shadow-lg hover:shadow-xl transition-all hover:scale-110 active:scale-95"
                             >
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-6 h-6 group-hover:-translate-x-1 transition-transform">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"/>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-5 h-5 group-hover:-translate-x-1 transition-transform">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7"/>
                                 </svg>
                             </button>
                             
                             {/* Current product indicator */}
-                            <div className="flex flex-col items-center gap-2">
-                                <span className="text-sm font-medium text-gray-700">
+                            <div className="flex flex-col items-center gap-1.5 min-w-[60px]">
+                                <span className="text-xs font-bold text-gray-800 whitespace-nowrap">
                                     {currentIndex + 1} / {products.length}
                                 </span>
-                                <div className="flex gap-1.5">
+                                <div className="flex gap-1">
                                     {products.map((_, i) => (
                                         <div
                                             key={i}
-                                            className={`h-1.5 rounded-full transition-all ${
+                                            className={`h-1 rounded-full transition-all ${
                                                 i === currentIndex 
-                                                    ? 'w-8 bg-gradient-to-r from-orange-500 to-orange-600' 
-                                                    : 'w-1.5 bg-gray-300'
+                                                    ? 'w-6 bg-gradient-to-r from-orange-500 to-orange-600' 
+                                                    : 'w-1 bg-gray-300'
                                             }`}
                                         />
                                     ))}
@@ -185,10 +185,10 @@ function ProductSection() {
                             <button
                                 aria-label="Next"
                                 onClick={handleNext}
-                                className="group rounded-full p-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white shadow-lg hover:shadow-xl transition-all hover:scale-110 active:scale-95"
+                                className="group flex-shrink-0 rounded-full p-3.5 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white shadow-lg hover:shadow-xl transition-all hover:scale-110 active:scale-95"
                             >
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-6 h-6 group-hover:translate-x-1 transition-transform">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-5 h-5 group-hover:translate-x-1 transition-transform">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7"/>
                                 </svg>
                             </button>
                         </div>
@@ -206,8 +206,8 @@ function ProductSection() {
                     </div>
                 </div>
 
-                {/* Dots */}
-                <div className="mt-6 flex items-center justify-center gap-2">
+                {/* Dots - Hidden on mobile, visible on desktop */}
+                <div className="hidden md:flex mt-6 items-center justify-center gap-2">
                     {products.map((_, i) => (
                         <button
                             key={i}
