@@ -13,33 +13,44 @@ use App\Http\Middleware\AdminMiddleware;
 // API ROUTES (ĐẶT TRƯỚC - QUAN TRỌNG!)
 // ========================================
 Route::prefix('api')->group(function () {
-    // Public API endpoints for products
-    Route::get('/products/search', [ProductController::class, 'search']); // Search products (MUST BE BEFORE {slug})
-    Route::get('/products', [ProductController::class, 'getAllProducts']); // All products with filters
-    Route::get('/products/featured', [ProductController::class, 'getFeatured']); // Featured products
-    Route::get('/products/{slug}', [ProductController::class, 'getProductBySlug']); // Single product by slug
-    Route::get('/categories', [ProductController::class, 'getCategories']); // Product categories
+    // Public API endpoints for products (rate limited)
+    Route::get('/products/search', [ProductController::class, 'search'])
+        ->middleware('throttle:search'); // 30 req/min
+    Route::get('/products', [ProductController::class, 'getAllProducts'])
+        ->middleware('throttle:api'); // 60 req/min
+    Route::get('/products/featured', [ProductController::class, 'getFeatured'])
+        ->middleware('throttle:api');
+    Route::get('/products/{slug}', [ProductController::class, 'getProductBySlug'])
+        ->middleware('throttle:api');
+    Route::get('/categories', [ProductController::class, 'getCategories'])
+        ->middleware('throttle:api');
     
-    // Public API endpoints for blogs
-    Route::get('/blogs', [BlogController::class, 'getBlogs']); // Blog list
-    Route::get('/blogs/{slug}', [BlogController::class, 'getBlogBySlug']); // Single blog by slug
-    Route::get('/blog-categories', [BlogController::class, 'getCategories']); // Blog categories
+    // Public API endpoints for blogs (rate limited)
+    Route::get('/blogs', [BlogController::class, 'getBlogs'])
+        ->middleware('throttle:api');
+    Route::get('/blogs/{slug}', [BlogController::class, 'getBlogBySlug'])
+        ->middleware('throttle:api');
+    Route::get('/blog-categories', [BlogController::class, 'getCategories'])
+        ->middleware('throttle:api');
     
-    // Contact form submission (public - KHÔNG CẦN AUTH)
-    // Hỗ trợ cả 2 URL: /api/contact và /api/contacts
-    Route::post('/contact', [ContactController::class, 'store']);
-    Route::post('/contacts', [ContactController::class, 'store']);
+    // Contact form submission (public - rate limited to prevent spam)
+    Route::post('/contact', [ContactController::class, 'store'])
+        ->middleware('throttle:contact'); // 3 req/min
+    Route::post('/contacts', [ContactController::class, 'store'])
+        ->middleware('throttle:contact');
 });
 
-// Auth routes
+// Auth routes (with rate limiting to prevent brute force)
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
-Route::post('/login', [AuthController::class, 'login']);
+Route::post('/login', [AuthController::class, 'login'])
+    ->middleware('throttle:login'); // 5 attempts/min
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
-Route::post('/register', [AuthController::class, 'register']);
+Route::post('/register', [AuthController::class, 'register'])
+    ->middleware('throttle:login'); // 5 attempts/min
 
-// Protected admin routes
-Route::middleware(['auth', AdminMiddleware::class])->group(function () {
+// Protected admin routes (with higher rate limit)
+Route::middleware(['auth', AdminMiddleware::class, 'throttle:admin'])->group(function () {
     // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     
