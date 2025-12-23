@@ -378,8 +378,12 @@ function About() {
                             As a company that cares, our contribution to the UN Sustainable Development Goals (SDGs) is integrated into our strategies across our business value chain. Based on prioritization, 8 SDGs most relevant to the business have been highlighted with objective to both increase positive impact and reduce negative impact from business operations
                         </p>
                     </div>
-                    <div className="flex justify-center mb-8">
-                        <img src="/imgs/goals.png" alt="UN SDG Goals" className="max-w-full h-auto rounded-xl shadow-lg" style={{maxWidth: '700px'}} />
+                    <div className="flex justify-center mb-8 px-4">
+                        <img 
+                            src="/imgs/goals.png" 
+                            alt="UN SDG Goals" 
+                            className="w-full h-auto rounded-xl shadow-lg md:max-w-[700px]" 
+                        />
                     </div>
                 </div>
             </section>
