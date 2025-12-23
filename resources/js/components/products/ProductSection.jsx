@@ -9,6 +9,10 @@ function ProductSection() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
+    
+    // Touch/Swipe state for mobile
+    const [touchStart, setTouchStart] = useState(null);
+    const [touchEnd, setTouchEnd] = useState(null);
 
     useEffect(() => {
         let isMounted = true;
@@ -43,6 +47,33 @@ function ProductSection() {
     const handleNext = useCallback(() => {
         setCurrentIndex(prev => clampIndex(prev + 1));
     }, [clampIndex]);
+
+    // Swipe handlers for mobile
+    const minSwipeDistance = 50; // minimum distance for swipe
+
+    const onTouchStart = (e) => {
+        setTouchEnd(null);
+        setTouchStart(e.targetTouches[0].clientX);
+    };
+
+    const onTouchMove = (e) => {
+        setTouchEnd(e.targetTouches[0].clientX);
+    };
+
+    const onTouchEnd = () => {
+        if (!touchStart || !touchEnd) return;
+        
+        const distance = touchStart - touchEnd;
+        const isLeftSwipe = distance > minSwipeDistance;
+        const isRightSwipe = distance < -minSwipeDistance;
+
+        if (isLeftSwipe) {
+            handleNext(); // Swipe left = next product
+        }
+        if (isRightSwipe) {
+            handlePrev(); // Swipe right = previous product
+        }
+    };
 
     const currentProduct = useMemo(() => products[currentIndex] || null, [products, currentIndex]);
 
@@ -131,8 +162,8 @@ function ProductSection() {
             {/* Gallery */}
             <div className="relative">
                 <div className="grid grid-cols-12 gap-4 md:gap-6 items-center">
-                    {/* Left arrow */}
-                    <div className="col-span-12 md:col-span-1 order-3 md:order-none flex justify-center md:justify-start">
+                    {/* Left arrow - Hidden on mobile, visible on desktop */}
+                    <div className="hidden md:flex md:col-span-1 justify-center md:justify-start">
                         <button
                             aria-label="Previous"
                             onClick={handlePrev}
@@ -142,17 +173,35 @@ function ProductSection() {
                         </button>
                     </div>
 
-                    {/* Center card */}
-                    <div className="col-span-12 md:col-span-10 order-1 md:order-none">
+                    {/* Center card with touch events for mobile swipe */}
+                    <div 
+                        className="col-span-12 md:col-span-10"
+                        onTouchStart={onTouchStart}
+                        onTouchMove={onTouchMove}
+                        onTouchEnd={onTouchEnd}
+                    >
                         {currentProduct && (
                             <div key={currentProduct.id} className="animate-fade-in-slide">
                                 <ProductCard product={currentProduct} isLarge />
                             </div>
                         )}
+                        
+                        {/* Mobile swipe hint */}
+                        <div className="md:hidden mt-4 text-center">
+                            <p className="text-sm text-gray-500 flex items-center justify-center gap-2">
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+                                </svg>
+                                <span>Vuốt để xem sản phẩm khác</span>
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </p>
+                        </div>
                     </div>
 
-                    {/* Right arrow */}
-                    <div className="col-span-12 md:col-span-1 order-2 md:order-none flex justify-center md:justify-end">
+                    {/* Right arrow - Hidden on mobile, visible on desktop */}
+                    <div className="hidden md:flex md:col-span-1 justify-center md:justify-end">
                         <button
                             aria-label="Next"
                             onClick={handleNext}
