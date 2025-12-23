@@ -172,6 +172,92 @@ Route::middleware(['auth', AdminMiddleware::class])->group(function () {
             ], 500);
         }
     })->name('test.lark.card');
+
+    // ========================================
+    // Storage Info Route (CHỈ DÙNG ĐỂ KIỂM TRA)
+    // ========================================
+    Route::get('/storage-info', function() {
+        try {
+            $disk = \Illuminate\Support\Facades\Storage::disk('public');
+            
+            // Get all files
+            $allFiles = $disk->allFiles();
+            $directories = $disk->allDirectories();
+            
+            // Calculate total size
+            $totalSize = 0;
+            foreach ($allFiles as $file) {
+                $totalSize += $disk->size($file);
+            }
+            
+            // Get files by directory
+            $filesByDir = [];
+            foreach ($directories as $dir) {
+                $files = $disk->files($dir);
+                $filesByDir[$dir] = [
+                    'count' => count($files),
+                    'files' => array_map(function($file) use ($disk) {
+                        return [
+                            'name' => basename($file),
+                            'path' => $file,
+                            'size' => $disk->size($file),
+                            'size_human' => $disk->size($file) > 1024*1024 
+                                ? round($disk->size($file)/(1024*1024), 2) . ' MB'
+                                : round($disk->size($file)/1024, 2) . ' KB',
+                            'url' => asset('storage/' . $file),
+                            'last_modified' => date('Y-m-d H:i:s', $disk->lastModified($file)),
+                        ];
+                    }, $files)
+                ];
+            }
+            
+            // Check if storage link exists
+            $storageLinkExists = is_link(public_path('storage'));
+            $storageLinkTarget = $storageLinkExists ? readlink(public_path('storage')) : null;
+            
+            return response()->json([
+                'success' => true,
+                'storage_info' => [
+                    'disk' => config('filesystems.default'),
+                    'public_disk' => 'public',
+                    'storage_path' => storage_path('app/public'),
+                    'public_path' => public_path('storage'),
+                    'link_exists' => $storageLinkExists,
+                    'link_target' => $storageLinkTarget,
+                ],
+                'statistics' => [
+                    'total_files' => count($allFiles),
+                    'total_directories' => count($directories),
+                    'total_size_bytes' => $totalSize,
+                    'total_size_human' => $totalSize > 1024*1024*1024 
+                        ? round($totalSize/(1024*1024*1024), 2) . ' GB'
+                        : ($totalSize > 1024*1024 
+                            ? round($totalSize/(1024*1024), 2) . ' MB'
+                            : round($totalSize/1024, 2) . ' KB'),
+                ],
+                'directories' => $directories,
+                'files_by_directory' => $filesByDir,
+                'all_files' => array_map(function($file) use ($disk) {
+                    return [
+                        'name' => basename($file),
+                        'path' => $file,
+                        'size' => $disk->size($file),
+                        'size_human' => $disk->size($file) > 1024*1024 
+                            ? round($disk->size($file)/(1024*1024), 2) . ' MB'
+                            : round($disk->size($file)/1024, 2) . ' KB',
+                        'url' => asset('storage/' . $file),
+                    ];
+                }, $allFiles),
+            ], 200);
+            
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'error' => $e->getMessage(),
+                'trace' => $e->getTraceAsString()
+            ], 500);
+        }
+    })->name('storage.info');
 });
 
 // ========================================

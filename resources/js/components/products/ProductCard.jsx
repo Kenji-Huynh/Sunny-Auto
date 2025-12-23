@@ -161,7 +161,7 @@ function ProductCard({ product, isLarge = false }) {
                     {/* Product Info Below */}
                     <div className="mt-3 text-center">
                         {product.short_description && (
-                            <p className="text-white text-xs leading-relaxed line-clamp-2 max-w-md mx-auto">
+                            <p className="text-gray-800 text-xs leading-relaxed line-clamp-2 max-w-md mx-auto">
                                 {product.short_description}
                             </p>
                         )}
