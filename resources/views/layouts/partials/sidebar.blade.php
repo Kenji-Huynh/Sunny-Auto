@@ -28,61 +28,11 @@
                 <span>Blog</span>
             </li>
         </a>
-        <a href="{{ route('contacts.index') }}" style="text-decoration: none; color: inherit; position: relative; display: block;">
+        <a href="{{ route('contacts.index') }}" style="text-decoration: none; color: inherit;">
             <li class="nav-item {{ request()->routeIs('contacts.*') ? 'active' : '' }}">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                 <span>Liên hệ</span>
-                <span class="unread-badge" style="
-                    display: none; 
-                    position: absolute; 
-                    top: 50%; 
-                    right: 16px; 
-                    transform: translateY(-50%);
-                    background: linear-gradient(135deg, #ef4444, #dc2626); 
-                    color: white; 
-                    font-size: 10px; 
-                    font-weight: 700; 
-                    padding: 4px 8px; 
-                    border-radius: 12px; 
-                    min-width: 20px; 
-                    height: 20px;
-                    text-align: center;
-                    line-height: 12px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4);
-                    border: 2px solid white;
-                ">0</span>
             </li>
         </a>
     </ul>
 </aside>
-
-<script>
-// Update unread contacts badge
-async function updateUnreadBadge() {
-    try {
-        const response = await fetch('/api/contacts/unread-count');
-        const data = await response.json();
-        
-        const badge = document.querySelector('.unread-badge');
-        if (badge) {
-            if (data.count > 0) {
-                badge.textContent = data.count;
-                badge.style.display = 'flex';
-            } else {
-                badge.style.display = 'none';
-            }
-        }
-    } catch (error) {
-        console.error('Error fetching unread count:', error);
-    }
-}
-
-// Update on page load
-document.addEventListener('DOMContentLoaded', updateUnreadBadge);
-
-// Update every 30 seconds
-setInterval(updateUnreadBadge, 30000);
-</script>

@@ -818,29 +818,4 @@
     </div>
 </div>
 
-<script>
-// Auto-refresh unread count every 30 seconds
-setInterval(async () => {
-    try {
-        const response = await fetch('/api/contacts/unread-count');
-        const data = await response.json();
-        
-        // Update badge if exists
-        const badge = document.querySelector('.unread-badge');
-        if (badge && data.count > 0) {
-            badge.textContent = data.count;
-            badge.style.display = 'inline-block';
-        } else if (badge && data.count === 0) {
-            badge.style.display = 'none';
-        }
-        
-        // Show notification if new contacts
-        if (data.count > 0 && !document.querySelector('.notification-shown')) {
-            console.log(`Bạn có ${data.count} tin nhắn mới`);
-        }
-    } catch (error) {
-        console.error('Error fetching unread count:', error);
-    }
-}, 30000);
-</script>
 @endsection
