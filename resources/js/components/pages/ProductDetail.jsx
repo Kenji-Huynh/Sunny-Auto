@@ -299,12 +299,6 @@ const ProductDetail = () => {
                                         </svg>
                                         Share instantly
                                     </button>
-                                            {/* Popup thông báo đã copy URL */}
-                                            {showCopyPopup && (
-                                                <div className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 bg-orange-500 text-white px-6 py-3 rounded-lg shadow-lg animate-fade-in">
-                                                    Đã copy URL
-                                                </div>
-                                            )}
                                 </div>
                             </div>
 
@@ -468,6 +462,16 @@ const ProductDetail = () => {
                     )}
                 </div>
             </div>
+
+            {/* Popup thông báo đã copy URL - Fixed position outside all containers */}
+            {showCopyPopup && (
+                <div className="fixed top-24 left-1/2 transform -translate-x-1/2 z-[9999] bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl shadow-2xl border-2 border-white/20 flex items-center gap-3 animate-bounce">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="font-bold text-lg">Đã copy URL thành công!</span>
+                </div>
+            )}
         </Layout>
     );
 };
