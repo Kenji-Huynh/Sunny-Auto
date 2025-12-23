@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import Layout from '../layout/Layout';
 import axios from 'axios';
+import { FadeInSection } from '../animation';
 
 function Contact() {
     const location = useLocation();
@@ -166,6 +167,7 @@ function Contact() {
             </div>
 
             {/* Contact Info & Map Section */}
+            <FadeInSection direction="up">
             <div style={{ padding: '80px 20px', background: '#fff' }}>
                 <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '40px', marginBottom: '60px' }}>
@@ -270,8 +272,10 @@ function Contact() {
                     </div>
                 </div>
             </div>
+            </FadeInSection>
 
             {/* Form Section - SIMPLIFIED for B2B */}
+            <FadeInSection direction="up">
             <div style={{ padding: '80px 20px', background: '#f9fafb' }}>
                 <div style={{ maxWidth: '900px', margin: '0 auto' }}>
                     <div style={{ textAlign: 'center', marginBottom: '48px' }}>
@@ -498,6 +502,7 @@ function Contact() {
                     </form>
                 </div>
             </div>
+            </FadeInSection>
         </Layout>
     );
 }

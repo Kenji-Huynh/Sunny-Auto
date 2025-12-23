@@ -8,31 +8,44 @@ import ServicesSection from '../services/ServicesSection';
 import StatsSection from '../stats/StatsSection';
 import MissionSection from '../mission/MissionSection';
 import BlogSection from '../blog/BlogSection';
+import { FadeInSection } from '../animation';
 
 function Home() {
     return (
         <PageTransition>
             <Layout>
-                {/* Hero Section with Video Background */}
+                {/* Hero Section with Video Background (no animation) */}
                 <Hero />
 
-                {/* Featured Products Section */}
-                <ProductSection />
+                {/* Featured Products Section - fade from bottom */}
+                <FadeInSection direction="up" delay={0.1}>
+                    <ProductSection />
+                </FadeInSection>
 
-                {/* Categories Section */}
-                <CategoriesSection />
+                {/* Categories Section - fade from bottom */}
+                <FadeInSection direction="up" delay={0.1}>
+                    <CategoriesSection />
+                </FadeInSection>
 
-                {/* Services Section */}
-                <ServicesSection />
+                {/* Services Section - fade from bottom */}
+                <FadeInSection direction="up" delay={0.1}>
+                    <ServicesSection />
+                </FadeInSection>
 
-                {/* Stats Section */}
-                <StatsSection />
+                {/* Stats Section - fade from bottom */}
+                <FadeInSection direction="up" delay={0.1}>
+                    <StatsSection />
+                </FadeInSection>
 
-                {/* Mission/Vision Section */}
-                <MissionSection />
+                {/* Mission/Vision Section - fade from bottom */}
+                <FadeInSection direction="up" delay={0.1}>
+                    <MissionSection />
+                </FadeInSection>
 
-                {/* Blog Section */}
-                <BlogSection />
+                {/* Blog Section - fade from bottom */}
+                <FadeInSection direction="up" delay={0.1}>
+                    <BlogSection />
+                </FadeInSection>
             </Layout>
         </PageTransition>
     );

@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../layout/Layout';
+import { FadeInSection } from '../animation';
 
 function About() {
     return (
@@ -27,6 +28,7 @@ function About() {
             </section>
 
             {/* Mission Section */}
+            <FadeInSection direction="up">
             <section className="py-20 bg-gradient-to-b from-white to-gray-50">
                 <div className="container mx-auto px-4">
                     <div className="max-w-5xl mx-auto">
@@ -88,8 +90,10 @@ function About() {
                     </div>
                 </div>
             </section>
+            </FadeInSection>
 
             {/* Vision & Mission Section */}
+            <FadeInSection direction="up">
             <section className="py-20 bg-gray-50">
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -128,8 +132,10 @@ function About() {
                     </div>
                 </div>
             </section>
+            </FadeInSection>
 
             {/* Our Product Range Section */}
+            <FadeInSection direction="up">
             <section className="py-20 bg-white">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-16">
@@ -196,8 +202,10 @@ function About() {
                     </div>
                 </div>
             </section>
+            </FadeInSection>
 
             {/* Values Section */}
+            <FadeInSection direction="up">
             <section className="py-20 bg-gray-50">
                 <div className="container mx-auto px-4">
                     <h2 className="text-4xl font-bold text-center mb-16 text-gray-900">
@@ -245,8 +253,10 @@ function About() {
                     </div>
                 </div>
             </section>
+            </FadeInSection>
 
             {/* Global Footprint & Diverse Talent Base Section */}
+            <FadeInSection direction="up">
             <section className="py-20 bg-gradient-to-b from-white to-gray-50">
                 <div className="container mx-auto px-4">
                     <div className="max-w-6xl mx-auto">
@@ -294,8 +304,10 @@ function About() {
                     </div>
                 </div>
             </section>
+            </FadeInSection>
 
             {/* ESG Commitment Section */}
+            <FadeInSection direction="up">
             <section className="py-20 bg-gradient-to-b from-orange-50 to-white">
                 <div className="container mx-auto px-4">
                     <div className="max-w-6xl mx-auto">
@@ -369,7 +381,10 @@ function About() {
                     </div>
                 </div>
             </section>
+            </FadeInSection>
+
             {/* UN SDG Adoption Section */}
+            <FadeInSection direction="up">
             <section className="py-20 bg-white">
                 <div className="container mx-auto px-4">
                     <div className="max-w-4xl mx-auto text-center mb-12">
@@ -387,8 +402,10 @@ function About() {
                     </div>
                 </div>
             </section>
+            </FadeInSection>
 
             {/* Timeline Section */}
+            <FadeInSection direction="up">
             <section className="py-20 bg-white">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-16">
@@ -479,8 +496,10 @@ function About() {
                     </div>
                 </div>
             </section>
+            </FadeInSection>
 
             {/* Core Management Team Section */}
+            <FadeInSection direction="up">
             <section className="py-20 bg-gray-50">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-16">
@@ -549,8 +568,10 @@ function About() {
                     </div>
                 </div>
             </section>
+            </FadeInSection>
 
             {/* CTA Section */}
+            <FadeInSection direction="up">
             <section className="py-20 bg-gradient-to-r from-orange-500 to-orange-600">
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -575,6 +596,7 @@ function About() {
                     </div>
                 </div>
             </section>
+            </FadeInSection>
         </Layout>
     );
 }
