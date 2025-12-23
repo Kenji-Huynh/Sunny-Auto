@@ -682,7 +682,7 @@ function Contact() {
                                     style={{ ...checkboxStyle, marginTop: '4px' }}
                                 />
                                 <span>
-                                    Tôi đồng ý với <a href="/privacy-policy" style={{ color: '#2563eb' }}>chính sách bảo mật</a> và cho phép Sunny Auto liên hệ với tôi về sản phẩm và dịch vụ. <span style={{ color: '#dc2626' }}>*</span>
+                                    Tôi đồng ý với <a href="/privacy-policy" style={{ color: 'orangered' }}>chính sách bảo mật</a> và cho phép Sunny Auto liên hệ với tôi về sản phẩm và dịch vụ. <span style={{ color: '#dc2626' }}>*</span>
                                 </span>
                             </label>
                             {errors.consent_agreed && <span style={errorStyle}>{errors.consent_agreed}</span>}
@@ -695,17 +695,20 @@ function Contact() {
                             style={{
                                 width: '100%',
                                 padding: '16px',
-                                background: isSubmitting ? '#94a3b8' : '#2563eb',
+                                background: isSubmitting 
+                                    ? '#fb923c' 
+                                    : 'linear-gradient(to right, #f97316, #ea580c)',
                                 color: 'white',
                                 fontSize: '16px',
                                 fontWeight: '600',
                                 border: 'none',
                                 borderRadius: '8px',
                                 cursor: isSubmitting ? 'not-allowed' : 'pointer',
-                                transition: 'all 0.2s'
+                                transition: 'all 0.2s',
+                                boxShadow: isSubmitting ? 'none' : '0 4px 6px -1px rgba(249, 115, 22, 0.3)'
                             }}
-                            onMouseOver={(e) => !isSubmitting && (e.target.style.background = '#1d4ed8')}
-                            onMouseOut={(e) => !isSubmitting && (e.target.style.background = '#2563eb')}
+                            onMouseOver={(e) => !isSubmitting && (e.target.style.background = 'linear-gradient(to right, #ea580c, #c2410c)')}
+                            onMouseOut={(e) => !isSubmitting && (e.target.style.background = 'linear-gradient(to right, #f97316, #ea580c)')}
                         >
                             {isSubmitting ? 'Đang gửi...' : 'Gửi yêu cầu liên hệ'}
                         </button>
