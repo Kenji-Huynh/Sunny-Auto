@@ -14,6 +14,7 @@ use App\Http\Middleware\AdminMiddleware;
 // ========================================
 Route::prefix('api')->group(function () {
     // Public API endpoints for products
+    Route::get('/products/search', [ProductController::class, 'search']); // Search products (MUST BE BEFORE {slug})
     Route::get('/products', [ProductController::class, 'getAllProducts']); // All products with filters
     Route::get('/products/featured', [ProductController::class, 'getFeatured']); // Featured products
     Route::get('/products/{slug}', [ProductController::class, 'getProductBySlug']); // Single product by slug

@@ -6,7 +6,7 @@ function About() {
         <Layout>
             {/* Hero Section */}
             <section 
-                className="relative min-h-[500px] flex items-center justify-center bg-cover bg-center"
+                className="relative min-h-[500px] flex items-center justify-center bg-cover bg-center pt-20"
                 style={{ backgroundImage: 'url(/imgs/products/about.jpg)' }}
             >
                 {/* Overlay */}

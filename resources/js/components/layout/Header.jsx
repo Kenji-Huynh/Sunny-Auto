@@ -90,9 +90,9 @@ function Header() {
         <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
             isHomePage
                 ? (isScrolled
-                    ? 'bg-white/95 backdrop-blur-sm shadow-sm border-gray-200'
+                    ? 'bg-white shadow-sm border-gray-200'
                     : 'bg-transparent border-white/20')
-                : 'bg-white/95 backdrop-blur-sm shadow-sm border-gray-200'
+                : 'bg-white shadow-sm border-gray-200'
         }`}>
             <div className="container mx-auto px-6 py-4">
                 <div className="flex items-center justify-between">
