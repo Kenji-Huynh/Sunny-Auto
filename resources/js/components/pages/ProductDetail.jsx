@@ -81,7 +81,7 @@ const ProductDetail = () => {
         return (
             <Layout>
                 <div className="min-h-screen flex items-center justify-center">
-                    <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-emerald-600"></div>
+                    <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-orange-500"></div>
                 </div>
             </Layout>
         );
@@ -93,7 +93,7 @@ const ProductDetail = () => {
                 <div className="min-h-screen flex items-center justify-center">
                     <div className="text-center">
                         <h2 className="text-2xl font-bold text-gray-900 mb-4">Không tìm thấy sản phẩm</h2>
-                        <Link to="/" className="text-emerald-600 hover:text-emerald-700">
+                        <Link to="/" className="text-orange-600 hover:text-orange-700">
                             Quay về trang chủ
                         </Link>
                     </div>
@@ -112,9 +112,9 @@ const ProductDetail = () => {
                     {/* Breadcrumb */}
                     <nav className="mb-8">
                         <ol className="flex items-center space-x-2 text-sm text-gray-600">
-                            <li><Link to="/" className="hover:text-emerald-600">Home</Link></li>
+                            <li><Link to="/" className="hover:text-orange-600">Home</Link></li>
                             <li>/</li>
-                            <li><Link to="/" className="hover:text-emerald-600">Electric vehicles</Link></li>
+                            <li><Link to="/" className="hover:text-orange-600">Electric vehicles</Link></li>
                             <li>/</li>
                             <li className="text-gray-900 font-medium">{product.name}</li>
                         </ol>
@@ -142,7 +142,7 @@ const ProductDetail = () => {
                                             onClick={() => setSelectedImage(index)}
                                             className={`relative rounded-lg overflow-hidden border-2 transition-all ${
                                                 selectedImage === index
-                                                    ? 'border-emerald-600 shadow-lg'
+                                                    ? 'border-orange-500 shadow-lg'
                                                     : 'border-gray-200 hover:border-gray-300'
                                             }`}
                                         >
@@ -167,10 +167,10 @@ const ProductDetail = () => {
                                 <span className="px-3 py-1 bg-gray-200 text-gray-900 text-xs font-semibold rounded">
                                     {product.category?.name}
                                 </span>
-                                <span className="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-semibold rounded">
+                                <span className="px-3 py-1 bg-orange-100 text-orange-700 text-xs font-semibold rounded">
                                     Available for test drive
                                 </span>
-                                <span className="px-3 py-1 border border-emerald-600 text-emerald-600 text-xs font-semibold rounded">
+                                <span className="px-3 py-1 border border-orange-500 text-orange-600 text-xs font-semibold rounded">
                                     Zero Emission
                                 </span>
                             </div>
@@ -180,9 +180,9 @@ const ProductDetail = () => {
 
                             {/* Price Card */}
                             <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 mb-8 relative overflow-hidden">
-                                <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-600/10 rounded-full -mr-32 -mt-32"></div>
+                                <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 rounded-full -mr-32 -mt-32"></div>
                                 <div className="relative z-10">
-                                    <span className="inline-block px-4 py-1 bg-emerald-600 text-white text-xs font-bold rounded-full mb-4">
+                                    <span className="inline-block px-4 py-1 bg-orange-500 text-white text-xs font-bold rounded-full mb-4">
                                         SPOTLIGHT PRICE
                                     </span>
                                     <p className="text-gray-400 text-sm mb-2">MANUFACTURER'S SUGGESTED RETAIL PRICE</p>
@@ -194,7 +194,7 @@ const ProductDetail = () => {
                                     </div>
                                     <div className="mt-6 space-y-3">
                                         <div className="flex items-start gap-3">
-                                            <svg className="w-6 h-6 text-emerald-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                            <svg className="w-6 h-6 text-orange-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
                                                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                                             </svg>
                                             <p className="text-gray-300 text-sm">
@@ -202,7 +202,7 @@ const ProductDetail = () => {
                                             </p>
                                         </div>
                                         <div className="flex items-start gap-3">
-                                            <svg className="w-6 h-6 text-emerald-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                            <svg className="w-6 h-6 text-orange-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
                                                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                                             </svg>
                                             <p className="text-gray-300 text-sm">
@@ -231,7 +231,7 @@ const ProductDetail = () => {
                             </div>
 
                             {/* Demo Available Section */}
-                            <div className="bg-gradient-to-br from-emerald-700 to-emerald-900 rounded-2xl p-8 mb-8 text-white">
+                            <div className="bg-gradient-to-br from-orange-600 to-orange-800 rounded-2xl p-8 mb-8 text-white">
                                 <div className="flex items-center gap-2 mb-4">
                                     <span className="px-3 py-1 bg-white/20 backdrop-blur-sm text-xs font-bold rounded-full">
                                         DEMO AVAILABLE
@@ -241,7 +241,7 @@ const ProductDetail = () => {
                                     </svg>
                                 </div>
                                 <h3 className="text-2xl font-bold mb-3">Demo vehicles ready at the experience center</h3>
-                                <p className="text-emerald-100 mb-6">
+                                <p className="text-orange-100 mb-6">
                                     Book a session on our private test track and experience the autonomous suite in real traffic scenarios.
                                 </p>
 
@@ -252,19 +252,19 @@ const ProductDetail = () => {
                                     </svg>
                                     <div>
                                         <p className="font-semibold">Sunny Auto Experience Center</p>
-                                        <p className="text-emerald-100 text-sm">12 DS Street, 14 Tech Park, Thu Duc City, Ho Chi Minh City</p>
+                                        <p className="text-orange-100 text-sm">12 DS Street, 14 Tech Park, Thu Duc City, Ho Chi Minh City</p>
                                     </div>
                                 </div>
 
                                 <div className="grid sm:grid-cols-2 gap-3">
                                     <button
-                                        className="px-6 py-3 bg-white text-emerald-700 font-semibold rounded-lg hover:bg-emerald-50 transition-colors"
+                                        className="px-6 py-3 bg-white text-orange-700 font-semibold rounded-lg hover:bg-orange-50 transition-colors"
                                         onClick={handleBookTestDrive}
                                     >
                                         Book a test drive
                                     </button>
                                     <button
-                                        className="px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-500 transition-colors"
+                                        className="px-6 py-3 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors"
                                         onClick={handleGetDirections}
                                     >
                                         Get directions to showroom
@@ -301,7 +301,7 @@ const ProductDetail = () => {
                                     </button>
                                             {/* Popup thông báo đã copy URL */}
                                             {showCopyPopup && (
-                                                <div className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 bg-emerald-600 text-white px-6 py-3 rounded-lg shadow-lg animate-fade-in">
+                                                <div className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 bg-orange-500 text-white px-6 py-3 rounded-lg shadow-lg animate-fade-in">
                                                     Đã copy URL
                                                 </div>
                                             )}
@@ -309,14 +309,14 @@ const ProductDetail = () => {
                             </div>
 
                             {/* Ownership Benefits */}
-                            <div className="bg-gradient-to-br from-emerald-700 to-emerald-900 rounded-2xl p-8 text-white">
+                            <div className="bg-gradient-to-br from-orange-600 to-orange-800 rounded-2xl p-8 text-white">
                                 <div className="flex items-center gap-2 mb-6">
                                     <span className="px-3 py-1 bg-white/20 backdrop-blur-sm text-xs font-bold rounded-full">
                                         OWNERSHIP BENEFITS
                                     </span>
                                 </div>
                                 <h3 className="text-2xl font-bold mb-3">Ownership experience & benefits</h3>
-                                <p className="text-emerald-100 mb-8">
+                                <p className="text-orange-100 mb-8">
                                     Premium services designed exclusively for Sunny Auto drivers—from immersive test drives to concierge-level support throughout your ownership journey.
                                 </p>
 
@@ -330,7 +330,7 @@ const ProductDetail = () => {
                                             </div>
                                             <div>
                                                 <h4 className="text-lg font-bold mb-2">Schedule a test drive</h4>
-                                                <p className="text-emerald-100 text-sm">
+                                                <p className="text-orange-100 text-sm">
                                                     Experience instant torque and autonomous assistance on our dedicated EV proving ground.
                                                 </p>
                                             </div>
@@ -346,7 +346,7 @@ const ProductDetail = () => {
                                             </div>
                                             <div>
                                                 <h4 className="text-lg font-bold mb-2">Flexible financing</h4>
-                                                <p className="text-emerald-100 text-sm">
+                                                <p className="text-orange-100 text-sm">
                                                     Get tailored financing with 0% APR for 12 months for returning Sunny Auto owners.
                                                 </p>
                                             </div>
@@ -362,7 +362,7 @@ const ProductDetail = () => {
                                             </div>
                                             <div>
                                                 <h4 className="text-lg font-bold mb-2">Download brochure</h4>
-                                                <p className="text-emerald-100 text-sm">
+                                                <p className="text-orange-100 text-sm">
                                                     Access deep-dives on battery tech, active safety, and Sunny Auto's charging standards.
                                                 </p>
                                             </div>
@@ -448,7 +448,7 @@ const ProductDetail = () => {
                                         </div>
                                         <div className="p-6">
                                             <p className="text-sm text-gray-600 mb-2">{relatedProduct.brand?.name}</p>
-                                            <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-emerald-600 transition-colors">
+                                            <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors">
                                                 {relatedProduct.name}
                                             </h3>
                                             <p className="text-sm text-gray-600 mb-4 line-clamp-2">{relatedProduct.short_description}</p>
@@ -456,7 +456,7 @@ const ProductDetail = () => {
                                                 <span className="text-2xl font-bold text-gray-900">
                                                     {formatPrice(relatedProduct.msrp_price)} đ
                                                 </span>
-                                                <svg className="w-6 h-6 text-emerald-600 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <svg className="w-6 h-6 text-orange-600 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                                 </svg>
                                             </div>
