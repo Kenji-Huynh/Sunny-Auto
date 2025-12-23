@@ -664,11 +664,6 @@
                 </div>
                 
                 <div class="filter-group">
-                    <label class="filter-label">Chủ đề</label>
-                    <input type="text" name="subject" value="{{ request('subject') }}" placeholder="Nhập chủ đề..." class="filter-input">
-                </div>
-                
-                <div class="filter-group">
                     <label class="filter-label">Khu vực (Tỉnh/Thành phố)</label>
                     <select name="location" class="filter-input">
                         <option value="">-- Tất cả khu vực --</option>
@@ -725,12 +720,12 @@
                     <thead>
                         <tr>
                             <th style="width: 8%;">Trạng thái</th>
-                            <th style="width: 18%;">Thông tin khách hàng</th>
-                            <th style="width: 16%;">Chủ đề</th>
-                            <th style="width: 25%;">Nội dung tin nhắn</th>
-                            <th style="width: 12%;">Thời gian gửi</th>
+                            <th style="width: 20%;">Thông tin khách hàng</th>
+                            <th style="width: 15%;">Nhu cầu tư vấn</th>
+                            <th style="width: 25%;">Nội dung chi tiết</th>
+                            <th style="width: 10%;">Thời gian</th>
                             <th style="width: 8%;">Đã đọc</th>
-                            <th style="width: 13%;">Thao tác</th>
+                            <th style="width: 14%;">Thao tác</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -748,17 +743,31 @@
                                 <td>
                                     <div class="customer-info">
                                         <p class="customer-name">👤 {{ $contact->name }}</p>
+                                        @if($contact->company)
+                                            <p class="customer-phone">🏢 {{ $contact->company }}</p>
+                                        @endif
                                         <p class="customer-email">📧 {{ $contact->email }}</p>
                                         @if($contact->phone)
                                             <p class="customer-phone">📞 {{ $contact->phone }}</p>
                                         @endif
+                                        @if($contact->location)
+                                            <p class="customer-phone">📍 {{ $contact->location }}</p>
+                                        @endif
                                     </div>
                                 </td>
                                 <td>
-                                    <p class="subject-text">{{ $contact->subject }}</p>
+                                    @if($contact->inquiry_types && is_array($contact->inquiry_types))
+                                        @foreach($contact->inquiry_types as $type)
+                                            <span style="display: inline-block; background: linear-gradient(135deg, #f97316, #ea580c); color: white; padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; margin: 2px;">
+                                                {{ $type }}
+                                            </span>
+                                        @endforeach
+                                    @else
+                                        <span style="color: #94a3b8; font-size: 12px;">-</span>
+                                    @endif
                                 </td>
                                 <td>
-                                    <p class="message-text">{{ Str::limit($contact->message, 100) }}</p>
+                                    <p class="message-text">{{ $contact->notes ? Str::limit($contact->notes, 100) : '-' }}</p>
                                 </td>
                                 <td>
                                     <p class="datetime-text">📅 {{ $contact->created_at->format('d/m/Y') }}</p>

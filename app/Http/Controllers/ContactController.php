@@ -92,10 +92,6 @@ class ContactController extends Controller
             $query->where('phone', 'like', '%' . $request->phone . '%');
         }
 
-        if ($request->filled('subject')) {
-            $query->where('subject', 'like', '%' . $request->subject . '%');
-        }
-
         if ($request->filled('status')) {
             $query->where('status', $request->status);
         }
@@ -110,19 +106,17 @@ class ContactController extends Controller
 
         $contacts = $query->orderBy('created_at', 'desc')->get();
 
-        // Create CSV content with new fields
+        // Create CSV content - simplified format matching PDF
         $csvData = [];
         $csvData[] = [
             'Họ và tên',
             'Công ty',
             'Email',
             'Số điện thoại',
-            'Địa điểm',
-            'Loại yêu cầu',
-            'Mục đích sử dụng',
-            'Ngân sách',
-            'Thời gian mua',
-            'Ghi chú',
+            'Khu vực',
+            'Nhu cầu tư vấn',
+            'Nội dung chi tiết',
+            'Trạng thái',
             'Ngày tạo'
         ];
 
@@ -134,10 +128,8 @@ class ContactController extends Controller
                 $contact->phone ?: '',
                 $contact->location ?: '',
                 is_array($contact->inquiry_types) ? implode(', ', $contact->inquiry_types) : '',
-                $contact->intended_use ?: '',
-                $contact->estimated_budget ?: '',
-                $contact->purchase_timeline ?: '',
                 $contact->notes ?: '',
+                $contact->status_label,
                 $contact->created_at->format('d/m/Y H:i')
             ];
         }
@@ -169,6 +161,7 @@ class ContactController extends Controller
 
     /**
      * Store a newly created contact from frontend
+     * Simplified validation matching PDF form (B2B)
      */
     public function store(Request $request)
     {
@@ -177,18 +170,10 @@ class ContactController extends Controller
             'company' => 'nullable|string|max:255',
             'email' => 'required|email|max:255',
             'phone' => 'required|string|max:20',
-            'location' => 'nullable|string|max:255',
-            'inquiry_types' => 'required|array',
-            'ev_products' => 'nullable|array',
-            'ev_products_other' => 'nullable|string|max:255',
-            'charging_products' => 'nullable|array',
-            'charging_products_other' => 'nullable|string|max:255',
-            'intended_use' => 'required|string|max:255',
-            'intended_use_other' => 'nullable|string|max:255',
-            'estimated_budget' => 'nullable|string|max:255',
-            'purchase_timeline' => 'nullable|string|max:255',
+            'location' => 'required|string|max:255',
+            'inquiry_types' => 'required|array|min:1',
             'notes' => 'nullable|string',
-            'consent_agreed' => 'required|boolean',
+            'consent_agreed' => 'required|accepted',
         ]);
 
         try {

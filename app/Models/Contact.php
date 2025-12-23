@@ -11,18 +11,8 @@ class Contact extends Model
         'company',
         'email',
         'phone',
-        'subject',        // Thêm lại subject
-        'message',        // Thêm lại message
         'location',
         'inquiry_types',
-        'ev_products',
-        'ev_products_other',
-        'charging_products',
-        'charging_products_other',
-        'intended_use',
-        'intended_use_other',
-        'estimated_budget',
-        'purchase_timeline',
         'notes',
         'consent_agreed',
         'status',
@@ -32,8 +22,6 @@ class Contact extends Model
 
     protected $casts = [
         'inquiry_types' => 'array',
-        'ev_products' => 'array',
-        'charging_products' => 'array',
         'consent_agreed' => 'boolean',
         'read_at' => 'datetime',
         'created_at' => 'datetime',

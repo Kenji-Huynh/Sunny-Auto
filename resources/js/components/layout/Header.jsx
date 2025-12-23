@@ -101,7 +101,7 @@ function Header() {
                         <img 
                             src="/imgs/logo/logo.png" 
                             alt="Sunny Auto" 
-                            className="h-10 lg:h-12 w-auto"
+                            className="h-12 lg:h-[54px] w-auto"
                         />
                     </Link>
 

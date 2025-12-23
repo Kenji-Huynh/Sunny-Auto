@@ -92,97 +92,21 @@
 
             <!-- Inquiry Types -->
             @if($contact->inquiry_types && count($contact->inquiry_types) > 0)
-            <h2 class="section-title">Loại yêu cầu</h2>
+            <h2 class="section-title">Nhu cầu tư vấn</h2>
             <div class="tag-list" style="margin-bottom: 24px;">
                 @foreach($contact->inquiry_types as $type)
-                    <span class="tag">{{ $type }}</span>
+                    <span class="tag" style="background: linear-gradient(135deg, #f97316, #ea580c); color: white;">{{ $type }}</span>
                 @endforeach
             </div>
             @endif
 
-            <!-- Products of Interest -->
-            @if(($contact->ev_products && count($contact->ev_products) > 0) || ($contact->charging_products && count($contact->charging_products) > 0))
-            <h2 class="section-title">Sản phẩm quan tâm</h2>
-            <div style="margin-bottom: 24px;">
-                @if($contact->ev_products && count($contact->ev_products) > 0)
-                <div style="margin-bottom: 12px;">
-                    <div style="font-size: 14px; font-weight: 600; color: #475569; margin-bottom: 8px;">Xe điện:</div>
-                    <div class="tag-list">
-                        @foreach($contact->ev_products as $product)
-                            <span class="tag" style="background: #dbeafe;">{{ $product }}</span>
-                        @endforeach
-                    </div>
-                    @if($contact->ev_products_other)
-                        <div style="margin-top: 8px; font-size: 13px; color: #64748b;">Khác: {{ $contact->ev_products_other }}</div>
-                    @endif
-                </div>
-                @endif
-
-                @if($contact->charging_products && count($contact->charging_products) > 0)
-                <div>
-                    <div style="font-size: 14px; font-weight: 600; color: #475569; margin-bottom: 8px;">Trạm sạc:</div>
-                    <div class="tag-list">
-                        @foreach($contact->charging_products as $product)
-                            <span class="tag" style="background: #fef3c7; color: #b45309;">{{ $product }}</span>
-                        @endforeach
-                    </div>
-                    @if($contact->charging_products_other)
-                        <div style="margin-top: 8px; font-size: 13px; color: #64748b;">Khác: {{ $contact->charging_products_other }}</div>
-                    @endif
-                </div>
-                @endif
-            </div>
-            @endif
-
-            <!-- Intended Use & Purchase Plan -->
-            <h2 class="section-title">Mục đích & Kế hoạch</h2>
-            <div class="info-grid">
-                @if($contact->intended_use)
-                <div class="info-box">
-                    <label>Mục đích sử dụng</label>
-                    <span>
-                        @if($contact->intended_use === 'b2c') Cá nhân (B2C)
-                        @elseif($contact->intended_use === 'b2b') Doanh nghiệp / Logistics
-                        @elseif($contact->intended_use === 'project') Dự án / Đội xe
-                        @else Khác
-                        @endif
-                        @if($contact->intended_use === 'other' && $contact->intended_use_other)
-                            : {{ $contact->intended_use_other }}
-                        @endif
-                    </span>
-                </div>
-                @endif
-                @if($contact->estimated_budget)
-                <div class="info-box">
-                    <label>Ngân sách ước tính</label>
-                    <span>
-                        @if($contact->estimated_budget === 'under_500m') Dưới 500 triệu
-                        @elseif($contact->estimated_budget === '500m_1b') 500 triệu - 1 tỷ
-                        @elseif($contact->estimated_budget === '1b_3b') 1 tỷ - 3 tỷ
-                        @elseif($contact->estimated_budget === '3b_5b') 3 tỷ - 5 tỷ
-                        @else Trên 5 tỷ
-                        @endif
-                    </span>
-                </div>
-                @endif
-                @if($contact->purchase_timeline)
-                <div class="info-box">
-                    <label>Thời gian dự kiến</label>
-                    <span>
-                        @if($contact->purchase_timeline === 'immediate') Ngay lập tức
-                        @elseif($contact->purchase_timeline === '1_3_months') 1-3 tháng
-                        @elseif($contact->purchase_timeline === '3_6_months') 3-6 tháng
-                        @else Trên 6 tháng
-                        @endif
-                    </span>
-                </div>
-                @endif
-            </div>
-
             <!-- Notes -->
             @if($contact->notes)
-            <h2 class="section-title">Ghi chú / Yêu cầu kỹ thuật</h2>
+            <h2 class="section-title">Nội dung tư vấn chi tiết</h2>
             <div class="notes-box">{{ $contact->notes }}</div>
+            @else
+            <h2 class="section-title">Nội dung tư vấn chi tiết</h2>
+            <div class="notes-box" style="color: #94a3b8; font-style: italic;">Khách hàng chưa cung cấp nội dung chi tiết.</div>
             @endif
 
             <div class="action-row">

@@ -221,103 +221,19 @@ class LarkService
             ];
         }
 
-        // Inquiry types
+        // Inquiry types (Nhu cầu tư vấn)
         if ($contact->inquiry_types && count($contact->inquiry_types) > 0) {
             $inquiryText = implode(', ', $contact->inquiry_types);
             $elements[] = [
                 'tag' => 'div',
                 'text' => [
-                    'content' => "📋 **Loại yêu cầu:** {$inquiryText}",
+                    'content' => "📋 **Nhu cầu tư vấn:** {$inquiryText}",
                     'tag' => 'lark_md',
                 ],
             ];
         }
 
-        // Products of interest
-        if (($contact->ev_products && count($contact->ev_products) > 0) || ($contact->charging_products && count($contact->charging_products) > 0)) {
-            $productText = '';
-            if ($contact->ev_products && count($contact->ev_products) > 0) {
-                $productText .= "\n🚛 Xe điện: " . implode(', ', $contact->ev_products);
-                if ($contact->ev_products_other) {
-                    $productText .= " (Khác: {$contact->ev_products_other})";
-                }
-            }
-            if ($contact->charging_products && count($contact->charging_products) > 0) {
-                $productText .= "\n⚡ Trạm sạc: " . implode(', ', $contact->charging_products);
-                if ($contact->charging_products_other) {
-                    $productText .= " (Khác: {$contact->charging_products_other})";
-                }
-            }
-            $elements[] = [
-                'tag' => 'div',
-                'text' => [
-                    'content' => "**Sản phẩm quan tâm:**{$productText}",
-                    'tag' => 'lark_md',
-                ],
-            ];
-        }
-
-        // Intended use
-        if ($contact->intended_use) {
-            $intendedUseText = '';
-            switch ($contact->intended_use) {
-                case 'b2c':
-                    $intendedUseText = 'Cá nhân (B2C)';
-                    break;
-                case 'b2b':
-                    $intendedUseText = 'Doanh nghiệp / Logistics (B2B)';
-                    break;
-                case 'project':
-                    $intendedUseText = 'Dự án / Đội xe';
-                    break;
-                case 'other':
-                    $intendedUseText = 'Khác';
-                    if ($contact->intended_use_other) {
-                        $intendedUseText .= ": {$contact->intended_use_other}";
-                    }
-                    break;
-            }
-            $elements[] = [
-                'tag' => 'div',
-                'text' => [
-                    'content' => "🎯 **Mục đích:** {$intendedUseText}",
-                    'tag' => 'lark_md',
-                ],
-            ];
-        }
-
-        // Purchase plan
-        $purchaseInfo = [];
-        if ($contact->estimated_budget) {
-            $budgetMap = [
-                'under_500m' => 'Dưới 500 triệu',
-                '500m_1b' => '500 triệu - 1 tỷ',
-                '1b_3b' => '1 tỷ - 3 tỷ',
-                '3b_5b' => '3 tỷ - 5 tỷ',
-                'over_5b' => 'Trên 5 tỷ'
-            ];
-            $purchaseInfo[] = "💰 Ngân sách: " . ($budgetMap[$contact->estimated_budget] ?? $contact->estimated_budget);
-        }
-        if ($contact->purchase_timeline) {
-            $timelineMap = [
-                'immediate' => 'Ngay lập tức',
-                '1_3_months' => '1-3 tháng',
-                '3_6_months' => '3-6 tháng',
-                'over_6_months' => 'Trên 6 tháng'
-            ];
-            $purchaseInfo[] = "📅 Thời gian: " . ($timelineMap[$contact->purchase_timeline] ?? $contact->purchase_timeline);
-        }
-        if (count($purchaseInfo) > 0) {
-            $elements[] = [
-                'tag' => 'div',
-                'text' => [
-                    'content' => implode("\n", $purchaseInfo),
-                    'tag' => 'lark_md',
-                ],
-            ];
-        }
-
-        // Notes
+        // Notes (Nội dung chi tiết)
         if ($contact->notes) {
             $elements[] = [
                 'tag' => 'hr',
@@ -395,7 +311,7 @@ class LarkService
     }
 
     /**
-     * Format simple text message for contact
+     * Format simple text message for contact (Simplified for B2B)
      */
     public function formatContactMessage($contact)
     {
@@ -407,15 +323,24 @@ class LarkService
 
         $emoji = $statusEmojis[$contact->status] ?? '🔵';
         $time = $contact->created_at->format('H:i - d/m/Y');
+        $inquiryTypes = $contact->inquiry_types ? implode(', ', $contact->inquiry_types) : 'N/A';
 
         $message = "━━━━━━━━━━━━━━━━━━━━━━\n";
-        $message .= "🔔 TIN NHẮN LIÊN HỆ MỚI\n";
+        $message .= "🔔 LIÊN HỆ B2B MỚI\n";
         $message .= "━━━━━━━━━━━━━━━━━━━━━━\n\n";
-        $message .= "📝 Chủ đề: {$contact->subject}\n\n";
         $message .= "👤 Họ và tên: {$contact->name}\n";
+        if ($contact->company) {
+            $message .= "🏢 Công ty: {$contact->company}\n";
+        }
         $message .= "📧 Email: {$contact->email}\n";
-        $message .= "📞 Số điện thoại: {$contact->phone}\n\n";
-        $message .= "💬 Nội dung:\n{$contact->message}\n\n";
+        $message .= "📞 Số điện thoại: {$contact->phone}\n";
+        if ($contact->location) {
+            $message .= "📍 Khu vực: {$contact->location}\n";
+        }
+        $message .= "📋 Nhu cầu: {$inquiryTypes}\n\n";
+        if ($contact->notes) {
+            $message .= "💬 Nội dung:\n{$contact->notes}\n\n";
+        }
         $message .= "⏰ Thời gian: {$time}\n";
         $message .= "{$emoji} Trạng thái: " . $this->getStatusText($contact->status) . "\n\n";
         $message .= "🔗 Xem chi tiết: " . env('APP_URL') . "/contacts/{$contact->id}\n";
