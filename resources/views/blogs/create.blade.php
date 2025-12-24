@@ -286,7 +286,7 @@
 </script>
 
 <!-- TinyMCE Editor -->
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/rua67gd2jkeex6xfaqtej1nn3mr0dwt609ae5zbf2u1gtuxr/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
     tinymce.init({
         selector: '#content',
