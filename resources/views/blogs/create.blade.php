@@ -164,6 +164,41 @@
     .alert-danger ul {
         margin: 10px 0 0 20px;
     }
+
+    /* Text Alignment Buttons */
+    .trix-button-group--text-alignment {
+        border-left: 1px solid #ccc;
+        padding-left: 8px;
+        margin-left: 8px;
+    }
+
+    .trix-button--icon-align-left::before {
+        content: "⬅";
+        font-size: 14px;
+    }
+
+    .trix-button--icon-align-center::before {
+        content: "≡";
+        font-size: 14px;
+    }
+
+    .trix-button--icon-align-right::before {
+        content: "➡";
+        font-size: 14px;
+    }
+
+    /* Alignment styles for content */
+    .text-align-left {
+        text-align: left !important;
+    }
+
+    .text-align-center {
+        text-align: center !important;
+    }
+
+    .text-align-right {
+        text-align: right !important;
+    }
 </style>
 
 <div class="blog-form-container">
@@ -280,4 +315,95 @@
     }
 </script>
 <script src="https://unpkg.com/trix@2.0.8/dist/trix.umd.min.js"></script>
+<script>
+    // Add text alignment buttons to Trix
+    document.addEventListener('trix-initialize', function(event) {
+        const editor = event.target;
+        const toolbar = editor.toolbarElement;
+        
+        // Find the button group to insert after (after the link button group)
+        const buttonGroups = toolbar.querySelectorAll('.trix-button-group');
+        const lastGroup = buttonGroups[buttonGroups.length - 1];
+        
+        // Create alignment button group
+        const alignmentGroup = document.createElement('span');
+        alignmentGroup.className = 'trix-button-group trix-button-group--text-alignment';
+        alignmentGroup.innerHTML = `
+            <button type="button" class="trix-button trix-button--icon trix-button--icon-align-left" 
+                    data-trix-attribute="alignLeft" title="Căn trái" tabindex="-1">Căn trái</button>
+            <button type="button" class="trix-button trix-button--icon trix-button--icon-align-center" 
+                    data-trix-attribute="alignCenter" title="Căn giữa" tabindex="-1">Căn giữa</button>
+            <button type="button" class="trix-button trix-button--icon trix-button--icon-align-right" 
+                    data-trix-attribute="alignRight" title="Căn phải" tabindex="-1">Căn phải</button>
+        `;
+        
+        // Insert after last button group
+        lastGroup.parentNode.insertBefore(alignmentGroup, lastGroup.nextSibling);
+    });
+
+    // Handle alignment button clicks
+    document.addEventListener('trix-initialize', function(event) {
+        const editor = event.target;
+        const element = editor.editor.element;
+        
+        // Define custom attributes for alignment
+        Trix.config.textAttributes.alignLeft = {
+            styleProperty: 'textAlign',
+            inheritable: true,
+            parser: function(element) {
+                return element.style.textAlign === 'left';
+            },
+            render: function(element) {
+                element.style.textAlign = 'left';
+                return element;
+            }
+        };
+        
+        Trix.config.textAttributes.alignCenter = {
+            styleProperty: 'textAlign',
+            inheritable: true,
+            parser: function(element) {
+                return element.style.textAlign === 'center';
+            },
+            render: function(element) {
+                element.style.textAlign = 'center';
+                return element;
+            }
+        };
+        
+        Trix.config.textAttributes.alignRight = {
+            styleProperty: 'textAlign',
+            inheritable: true,
+            parser: function(element) {
+                return element.style.textAlign === 'right';
+            },
+            render: function(element) {
+                element.style.textAlign = 'right';
+                return element;
+            }
+        };
+    });
+
+    // Handle alignment activation
+    document.addEventListener('trix-action-invoke', function(event) {
+        if (event.actionName.startsWith('align')) {
+            event.preventDefault();
+            const editor = event.target.editor;
+            
+            // Remove all alignment attributes first
+            editor.deactivateAttribute('alignLeft');
+            editor.deactivateAttribute('alignCenter');
+            editor.deactivateAttribute('alignRight');
+            
+            // Apply the clicked alignment
+            if (event.actionName === 'alignLeft') {
+                editor.activateAttribute('alignLeft');
+            } else if (event.actionName === 'alignCenter') {
+                editor.activateAttribute('alignCenter');
+            } else if (event.actionName === 'alignRight') {
+                editor.activateAttribute('alignRight');
+            }
+        }
+    });
+</script>
 @endsection
