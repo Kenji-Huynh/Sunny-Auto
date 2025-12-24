@@ -1,13 +1,200 @@
 {
+  "_FadeInSection-DXKlQ20z.js": {
+    "file": "assets/FadeInSection-DXKlQ20z.js",
+    "name": "FadeInSection",
+    "imports": [
+      "_animation-vendor-cqAOgI-L.js",
+      "_react-vendor-DBIh15m-.js"
+    ]
+  },
+  "_Layout-Di4KQfwB.js": {
+    "file": "assets/Layout-Di4KQfwB.js",
+    "name": "Layout",
+    "imports": [
+      "_animation-vendor-cqAOgI-L.js",
+      "_react-vendor-DBIh15m-.js",
+      "_http-vendor-Dos3PyFQ.js",
+      "resources/js/app.jsx",
+      "_router-vendor-DY4tAilk.js"
+    ]
+  },
+  "_animation-vendor-cqAOgI-L.js": {
+    "file": "assets/animation-vendor-cqAOgI-L.js",
+    "name": "animation-vendor",
+    "imports": [
+      "_react-vendor-DBIh15m-.js"
+    ]
+  },
+  "_http-vendor-Dos3PyFQ.js": {
+    "file": "assets/http-vendor-Dos3PyFQ.js",
+    "name": "http-vendor"
+  },
+  "_react-vendor-DBIh15m-.js": {
+    "file": "assets/react-vendor-DBIh15m-.js",
+    "name": "react-vendor"
+  },
+  "_router-vendor-DY4tAilk.js": {
+    "file": "assets/router-vendor-DY4tAilk.js",
+    "name": "router-vendor",
+    "imports": [
+      "_react-vendor-DBIh15m-.js"
+    ]
+  },
   "resources/css/app.css": {
-    "file": "assets/app-qRicCLQo.css",
+    "file": "assets/app-Bhzjj7c3.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-M0kv0RTM.js",
+    "file": "assets/app-CMtZu_Fm.js",
     "name": "app",
     "src": "resources/js/app.jsx",
-    "isEntry": true
+    "isEntry": true,
+    "imports": [
+      "_animation-vendor-cqAOgI-L.js",
+      "_http-vendor-Dos3PyFQ.js",
+      "_react-vendor-DBIh15m-.js",
+      "_router-vendor-DY4tAilk.js"
+    ],
+    "dynamicImports": [
+      "resources/js/components/pages/Home.jsx",
+      "resources/js/components/pages/ProductDetail.jsx",
+      "resources/js/components/pages/Products.jsx",
+      "resources/js/components/pages/Blog.jsx",
+      "resources/js/components/pages/BlogDetail.jsx",
+      "resources/js/components/pages/Contact.jsx",
+      "resources/js/components/pages/About.jsx",
+      "resources/js/components/pages/PrivacyPolicy.jsx",
+      "resources/js/components/pages/CookiePolicy.jsx"
+    ]
+  },
+  "resources/js/components/pages/About.jsx": {
+    "file": "assets/About-ONutWEA6.js",
+    "name": "About",
+    "src": "resources/js/components/pages/About.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_animation-vendor-cqAOgI-L.js",
+      "_react-vendor-DBIh15m-.js",
+      "_Layout-Di4KQfwB.js",
+      "_FadeInSection-DXKlQ20z.js",
+      "_http-vendor-Dos3PyFQ.js",
+      "resources/js/app.jsx",
+      "_router-vendor-DY4tAilk.js"
+    ]
+  },
+  "resources/js/components/pages/Blog.jsx": {
+    "file": "assets/Blog-CT4xjaUz.js",
+    "name": "Blog",
+    "src": "resources/js/components/pages/Blog.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_animation-vendor-cqAOgI-L.js",
+      "_react-vendor-DBIh15m-.js",
+      "_http-vendor-Dos3PyFQ.js",
+      "_Layout-Di4KQfwB.js",
+      "_router-vendor-DY4tAilk.js",
+      "resources/js/app.jsx"
+    ]
+  },
+  "resources/js/components/pages/BlogDetail.jsx": {
+    "file": "assets/BlogDetail-U5FAVoPC.js",
+    "name": "BlogDetail",
+    "src": "resources/js/components/pages/BlogDetail.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_animation-vendor-cqAOgI-L.js",
+      "_react-vendor-DBIh15m-.js",
+      "_http-vendor-Dos3PyFQ.js",
+      "_Layout-Di4KQfwB.js",
+      "_router-vendor-DY4tAilk.js",
+      "resources/js/app.jsx"
+    ]
+  },
+  "resources/js/components/pages/Contact.jsx": {
+    "file": "assets/Contact-CYrw4hP7.js",
+    "name": "Contact",
+    "src": "resources/js/components/pages/Contact.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_animation-vendor-cqAOgI-L.js",
+      "_react-vendor-DBIh15m-.js",
+      "_Layout-Di4KQfwB.js",
+      "_http-vendor-Dos3PyFQ.js",
+      "_FadeInSection-DXKlQ20z.js",
+      "_router-vendor-DY4tAilk.js",
+      "resources/js/app.jsx"
+    ]
+  },
+  "resources/js/components/pages/CookiePolicy.jsx": {
+    "file": "assets/CookiePolicy-B8oURQe9.js",
+    "name": "CookiePolicy",
+    "src": "resources/js/components/pages/CookiePolicy.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_animation-vendor-cqAOgI-L.js",
+      "_react-vendor-DBIh15m-.js",
+      "_Layout-Di4KQfwB.js",
+      "_http-vendor-Dos3PyFQ.js",
+      "resources/js/app.jsx",
+      "_router-vendor-DY4tAilk.js"
+    ]
+  },
+  "resources/js/components/pages/Home.jsx": {
+    "file": "assets/Home-7qh3LTJf.js",
+    "name": "Home",
+    "src": "resources/js/components/pages/Home.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_animation-vendor-cqAOgI-L.js",
+      "_react-vendor-DBIh15m-.js",
+      "_Layout-Di4KQfwB.js",
+      "_router-vendor-DY4tAilk.js",
+      "_http-vendor-Dos3PyFQ.js",
+      "resources/js/app.jsx",
+      "_FadeInSection-DXKlQ20z.js"
+    ]
+  },
+  "resources/js/components/pages/PrivacyPolicy.jsx": {
+    "file": "assets/PrivacyPolicy-6hla4nSH.js",
+    "name": "PrivacyPolicy",
+    "src": "resources/js/components/pages/PrivacyPolicy.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_animation-vendor-cqAOgI-L.js",
+      "_react-vendor-DBIh15m-.js",
+      "_Layout-Di4KQfwB.js",
+      "_http-vendor-Dos3PyFQ.js",
+      "resources/js/app.jsx",
+      "_router-vendor-DY4tAilk.js"
+    ]
+  },
+  "resources/js/components/pages/ProductDetail.jsx": {
+    "file": "assets/ProductDetail-DHwMv7kQ.js",
+    "name": "ProductDetail",
+    "src": "resources/js/components/pages/ProductDetail.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_animation-vendor-cqAOgI-L.js",
+      "_react-vendor-DBIh15m-.js",
+      "_http-vendor-Dos3PyFQ.js",
+      "_Layout-Di4KQfwB.js",
+      "resources/js/app.jsx",
+      "_router-vendor-DY4tAilk.js"
+    ]
+  },
+  "resources/js/components/pages/Products.jsx": {
+    "file": "assets/Products-3yw_tB-a.js",
+    "name": "Products",
+    "src": "resources/js/components/pages/Products.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_animation-vendor-cqAOgI-L.js",
+      "_react-vendor-DBIh15m-.js",
+      "_http-vendor-Dos3PyFQ.js",
+      "_Layout-Di4KQfwB.js",
+      "_router-vendor-DY4tAilk.js",
+      "resources/js/app.jsx"
+    ]
   }
 }
